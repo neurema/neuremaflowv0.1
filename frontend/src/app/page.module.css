@@ -136,6 +136,40 @@
   max-width: 620px;
 }
 
+.infoSections {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+  margin: clamp(48px, 10vw, 96px) auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 6vw, 42px);
+}
+
+.infoSection {
+  padding: clamp(24px, 5vw, 36px);
+  border-radius: 28px;
+  border: 1px solid rgba(131, 71, 221, 0.18);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 26px 60px rgba(117, 45, 209, 0.18),
+    0 14px 28px rgba(13, 18, 22, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.infoTitle {
+  font-size: clamp(1.6rem, 1.5vw + 1.1rem, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-border);
+  margin-bottom: clamp(12px, 2vw, 18px);
+}
+
+.infoText {
+  font-size: clamp(1rem, 0.6vw + 0.9rem, 1.1rem);
+  line-height: 1.8;
+  color: rgba(13, 18, 22, 0.74);
+}
+
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -406,6 +440,10 @@
     padding-inline: 42px;
   }
 
+  .infoSections {
+    margin-top: clamp(36px, 9vw, 64px);
+  }
+
   .hero {
     width: min(640px, 100%);
   }
@@ -427,6 +465,10 @@
 
   .signIn {
     width: 100%;
+  }
+
+  .infoSection {
+    padding: clamp(20px, 8vw, 28px);
   }
 
   .tagline {
@@ -467,6 +509,10 @@
     position: static;
     transform: none;
     margin: clamp(28px, 10vw, 52px) auto 0;
+  }
+
+  .infoSections {
+    width: 100%;
   }
 
   .modal {

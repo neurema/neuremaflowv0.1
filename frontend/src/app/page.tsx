@@ -8,6 +8,8 @@ export default function Home() {
     { href: "#", label: "Get Started" },
     { href: "#", label: "Storm" },
     { href: "#", label: "Pricing" },
+    { href: "#about-us", label: "About Us" },
+    { href: "#terms-and-conditions", label: "Terms" },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -96,6 +98,27 @@ export default function Home() {
         aria-hidden="true"
         className={`${styles.spark} ${styles.sparkBottomRight}`}
       />
+
+      <section className={styles.infoSections} aria-label="Additional information">
+        <article id="about-us" className={styles.infoSection}>
+          <h2 className={styles.infoTitle}>About Us</h2>
+          <p className={styles.infoText}>
+            Neurema BrainStorm is a collective of educators, designers, and
+            neuroscientists dedicated to creating memorable learning journeys.
+            Our studio blends evidence-based strategies with thoughtful design
+            to help every learner feel confident, inspired, and supported.
+          </p>
+        </article>
+        <article id="terms-and-conditions" className={styles.infoSection}>
+          <h2 className={styles.infoTitle}>Terms and Conditions</h2>
+          <p className={styles.infoText}>
+            By exploring Neurema BrainStorm you agree to use the platform with
+            curiosity and respect. All features are provided as-is, and we may
+            update offerings, availability, or policies to keep the experience
+            fair, secure, and aligned with our learning mission.
+          </p>
+        </article>
+      </section>
 
       {isModalOpen && (
         <div
