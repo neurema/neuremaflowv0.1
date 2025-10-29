@@ -97,6 +97,11 @@ export default function Home() {
         className={`${styles.spark} ${styles.sparkBottomRight}`}
       />
 
+      <footer className={styles.footer}>
+        <a href="/about-us">About Us</a>
+        <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+      </footer>
+
       {isModalOpen && (
         <div
           className={styles.modalOverlay}
