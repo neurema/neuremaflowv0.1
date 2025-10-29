@@ -1,0 +1,76 @@
+.container {
+  min-height: 100vh;
+  background: var(--color-background);
+  padding: clamp(32px, 10vw, 80px) clamp(24px, 8vw, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  width: min(840px, 100%);
+  background: var(--color-surface);
+  border-radius: 32px;
+  border: 1px solid rgba(131, 71, 221, 0.18);
+  box-shadow: 0 28px 64px rgba(131, 71, 221, 0.18),
+    0 18px 44px rgba(13, 18, 22, 0.12);
+  padding: clamp(32px, 7vw, 72px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+  color: var(--color-border);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  color: rgba(13, 18, 22, 0.72);
+  line-height: 1.6;
+}
+
+.paragraph {
+  font-size: clamp(1rem, 1vw + 0.9rem, 1.1rem);
+  line-height: 1.8;
+  color: rgba(13, 18, 22, 0.78);
+}
+
+.backLink {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent-strong);
+  transition: opacity 0.2s ease;
+}
+
+.backLink::before {
+  content: "←";
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.backLink:hover,
+.backLink:focus-visible {
+  opacity: 0.75;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: clamp(24px, 12vw, 48px);
+  }
+
+  .inner {
+    border-radius: 24px;
+    padding: clamp(24px, 10vw, 48px);
+  }
+}
