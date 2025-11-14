@@ -1,14 +1,11 @@
-'use client';
+﻿'use client';
 
 import { FormEvent, useEffect, useState } from "react";
+import Orb from "@/components/Orb";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const navLinks = [
-    { href: "#", label: "Get Started" },
-    { href: "#", label: "Storm" },
-    { href: "#", label: "Pricing" },
-  ];
+  const navLinks: { href: string; label: string }[] = [];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -65,49 +62,35 @@ export default function Home() {
       </header>
 
       <main className={styles.hero}>
-        <span className={styles.tagline}>
-          <span className={styles.tagDot} aria-hidden />
-          Because, Knowledge Deserves to Stay
-        </span>
-        <h1 className={styles.title}>
-          Digital <span className={styles.strike}>BrainRot</span>{" "}
-          <span className={styles.highlight}>BrainStorm</span>
-        </h1>
-        <p className={styles.subtitle}>
-          We help you transform your short-term knowledge into long-term memory
-          with our neuroscience-grounded revision tool.
-        </p>
+        <div className={styles.heroBackground} aria-hidden="true">
+          <div className={styles.heroOrb}>
+            <Orb hoverIntensity={0.5} rotateOnHover hue={0} forceHoverState={false} />
+          </div>
+        </div>
+        <div className={styles.heroContent}>
+          <span className={styles.tagline}>
+            <span className={styles.tagDot} aria-hidden />
+            Because, Knowledge Deserves to Stay
+          </span>
+          <h1 className={styles.title}>
+            Digital <span className={styles.strike}>BrainRot</span>{" "}
+            <span className={styles.highlight}>BrainStorm</span>
+          </h1>
+          <p className={styles.subtitle}>
+            We help you transform your short-term knowledge into long-term memory
+            with our neuroscience-grounded revision tool.
+          </p>
+        </div>
       </main>
-
-      <div className={styles.brain} aria-hidden="true" />
-      <span
-        aria-hidden="true"
-        className={`${styles.spark} ${styles.sparkTopLeft}`}
-      />
-      <span
-        aria-hidden="true"
-        className={`${styles.spark} ${styles.sparkTopRight}`}
-      />
-      <span
-        aria-hidden="true"
-        className={`${styles.spark} ${styles.sparkBottomLeft}`}
-      />
-      <span
-        aria-hidden="true"
-        className={`${styles.spark} ${styles.sparkBottomRight}`}
-      />
 
       <footer className={styles.footer}>
         <a href="/about-us">About Us</a>
         <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+        <a href="/pricing">Pricing</a>
       </footer>
 
       {isModalOpen && (
-        <div
-          className={styles.modalOverlay}
-          role="presentation"
-          onClick={closeModal}
-        >
+        <div className={styles.modalOverlay} role="presentation" onClick={closeModal}>
           <div
             className={styles.modal}
             role="dialog"
@@ -162,11 +145,7 @@ export default function Home() {
                 <button type="submit" className={styles.modalSubmit}>
                   Continue
                 </button>
-                <button
-                  type="button"
-                  className={styles.modalForgot}
-                  onClick={closeModal}
-                >
+                <button type="button" className={styles.modalForgot} onClick={closeModal}>
                   Forgot password?
                 </button>
               </div>

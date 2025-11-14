@@ -1,0 +1,4 @@
+﻿      <span aria-hidden="true" className={`${styles.spark} ${styles.sparkTopLeft}`} />
+      <span aria-hidden="true" className={`${styles.spark} ${styles.sparkTopRight}`} />
+      <span aria-hidden="true" className={`${styles.spark} ${styles.sparkBottomLeft}`} />
+      <span aria-hidden="true" className={`${styles.spark} ${styles.sparkBottomRight}`} />
