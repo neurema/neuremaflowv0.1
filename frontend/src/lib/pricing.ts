@@ -20,7 +20,7 @@ export const pricingPlansByTier: PricingPlansByTier = {
       id: "effective-learning",
       tier: "personal",
       name: "Effective Learning",
-      price: 199,
+      price: 279,
       currency: "INR",
       unit: "exam",
       billingNote: "Valid until the set exam date",
