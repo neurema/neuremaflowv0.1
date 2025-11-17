@@ -10,19 +10,19 @@ export default function AboutUsPage() {
         </Link>
         <h1 className={styles.title}>About Us</h1>
         <p className={styles.paragraph}>
-          <strong>Dr. Priyansh Jain</strong> &ndash; A senior who understands
-          businesses and guides us. A renowned teacher, who understands the real
-          issue of students. He is deeply connected with our user base and
-          possesses both knowledge and experience in the EdTech industry. He has
-          also funded us wholeheartedly.
-        </p>
-        <p className={styles.paragraph}>
           <strong>Ashutosh Thakur</strong> &ndash; A core member since almost the
           beginning. He helped identify the exact components required for the
           wearable and made the project technically and financially feasible.
           The driving force behind our wearable creation, he also created our
           sleek website and contributes to tech-related decision making for both
           the app and wearables.
+        </p>
+        <p className={styles.paragraph}>
+          <strong>Dr. Priyansh Jain</strong> &ndash; A senior who understands
+          businesses and guides us. A renowned teacher, who understands the real
+          issue of students. He is deeply connected with our user base and
+          possesses both knowledge and experience in the EdTech industry. He has
+          also funded us wholeheartedly.
         </p>
         <p className={styles.paragraph}>
           <strong>Jaivardhan Bhola</strong> &ndash; A prodigy in app
@@ -45,6 +45,15 @@ export default function AboutUsPage() {
           doesn&apos;t just perform well but also looks great. She contributes to
           design, feature planning, and product marketing. She&apos;s closely
           involved in mapping out strategies and improving user experience.
+        </p>
+        <p className={styles.paragraph}>
+          <strong>Shoaib</strong> &ndash; He oversees operations and account
+          management at Neurema, ensuring that product development is matched with
+          sustainable financial and operational processes. Since the outset he has
+          helped make the project viable through partnership development, budgeting
+          and customer coordination. His emphasis on operational excellence and
+          user-focused priorities supports the team&apos;s ability to deliver a
+          dependable, scalable learning platform.
         </p>
       </article>
     </div>
