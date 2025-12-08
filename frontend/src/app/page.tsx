@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState, useRef } from "react";
 
 import styles from "./page.module.css";
 import { auth, googleProvider } from "@/lib/firebase";
@@ -14,6 +14,77 @@ export default function Home() {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const [scrollY, setScrollY] = useState(0);
+
+  const feature1Ref = useRef<HTMLDivElement>(null);
+  const feature2Ref = useRef<HTMLDivElement>(null);
+  const feature3Ref = useRef<HTMLDivElement>(null);
+  const feature4Ref = useRef<HTMLDivElement>(null);
+  const feature5Ref = useRef<HTMLDivElement>(null);
+
+  const [featureStates, setFeatureStates] = useState({
+    feature1: 'hidden',
+    feature2: 'hidden',
+    feature3: 'hidden',
+    feature4: 'hidden',
+    feature5: 'hidden'
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+
+      const windowHeight = window.innerHeight;
+      const middleOfScreen = windowHeight / 2;
+
+      const rect1 = feature1Ref.current?.getBoundingClientRect();
+      const rect2 = feature2Ref.current?.getBoundingClientRect();
+      const rect3 = feature3Ref.current?.getBoundingClientRect();
+      const rect4 = feature4Ref.current?.getBoundingClientRect();
+      const rect5 = feature5Ref.current?.getBoundingClientRect();
+
+      const updateState = (key: string, rect: DOMRect | undefined, nextRect: DOMRect | undefined, isLast: boolean) => {
+        if (!rect) return;
+
+        // Enter threshold: element top is within viewport (with some buffer)
+        const isVisible = rect.top < windowHeight - 100;
+
+        // Exit threshold: 
+        // If it's not the last one, exit when the NEXT element hits the middle of the screen.
+        // If it is the last one, exit when it scrolls off the top.
+        let isExiting = false;
+        if (isLast) {
+          isExiting = rect.top < -50;
+        } else if (nextRect) {
+          isExiting = nextRect.top < middleOfScreen;
+        }
+
+        let newState = 'hidden';
+        if (isVisible) newState = 'visible';
+        if (isExiting) newState = 'exiting';
+
+        setFeatureStates(prev => {
+          if (prev[key as keyof typeof prev] !== newState) {
+            return { ...prev, [key]: newState };
+          }
+          return prev;
+        });
+      };
+
+      updateState('feature1', rect1, rect2, false);
+      updateState('feature2', rect2, rect3, false);
+      updateState('feature3', rect3, rect4, false);
+      updateState('feature4', rect4, rect5, false);
+      updateState('feature5', rect5, undefined, true);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Initial check
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ... (rest of the component logic remains same until return)
 
   useEffect(() => {
     if (!isModalOpen) {
@@ -146,7 +217,14 @@ export default function Home() {
         </button>
       </header>
 
-      <main className={styles.hero}>
+      <main
+        className={styles.hero}
+        style={{
+          opacity: Math.max(0, 1 - scrollY / 500),
+          transform: `translateY(${scrollY * 0.5}px)`,
+          filter: `blur(${scrollY * 0.02}px)`
+        }}
+      >
         <div className={styles.heroBackground} aria-hidden="true">
         </div>
         <div className={styles.heroContent}>
@@ -164,6 +242,98 @@ export default function Home() {
           </p>
         </div>
       </main>
+
+      <section className={styles.downloadSection}>
+        <div className={styles.downloadContainer}>
+          <img src="/neurema-mascot.svg" alt="Neurema Mascot" className={styles.downloadMascot} />
+          <a
+            href="https://play.google.com/store/apps/details?id=com.neurema.neurema&pcampaignid=web_share"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.downloadLink}
+          >
+            <span>Download Neurema on Play Store</span>
+            <img src="/playstore.svg" alt="Play Store" className={styles.playStoreIcon} />
+          </a>
+        </div>
+      </section>
+
+      <section className={styles.features}>
+        <div
+          ref={feature1Ref}
+          className={`${styles.featureItem} ${styles[featureStates.feature1]}`}
+        >
+          <div className={styles.featureContent}>
+            <h2 className={styles.featureTitle}>Smart Input</h2>
+            <p className={styles.featureDescription}>
+              Simply add the topic you studied. Our app intelligently categorizes and schedules it for future revision.
+            </p>
+          </div>
+          <div className={styles.featureImageWrapper}>
+            <img src="/feature-input.png" alt="Input feature" className={styles.featureImage} />
+          </div>
+        </div>
+
+        <div
+          ref={feature2Ref}
+          className={`${styles.featureItem} ${styles[featureStates.feature2]}`}
+        >
+          <div className={styles.featureContent}>
+            <h2 className={styles.featureTitle}>Optimized Scheduling</h2>
+            <p className={styles.featureDescription}>
+              The app smartly tells you when to next study the topic for max efficiency based on cognitive sciences and spaced repetition.
+            </p>
+          </div>
+          <div className={styles.featureImageWrapper}>
+            <img src="/feature-card.png" alt="Calendar feature" className={styles.featureImage} />
+          </div>
+        </div>
+
+        <div
+          ref={feature3Ref}
+          className={`${styles.featureItem} ${styles[featureStates.feature3]}`}
+        >
+          <div className={styles.featureContent}>
+            <h2 className={styles.featureTitle}>Topic Bubbles</h2>
+            <p className={styles.featureDescription}>
+              We group similar topics into bubbles so when the exams are closer you can revise multiple related topics at once for better context.
+            </p>
+          </div>
+          <div className={styles.featureImageWrapper}>
+            <img src="/feature-calendar.png" alt="Card feature" className={styles.featureImage} />
+          </div>
+        </div>
+
+        <div
+          ref={feature4Ref}
+          className={`${styles.featureItem} ${styles[featureStates.feature4]}`}
+        >
+          <div className={styles.featureContent}>
+            <h2 className={styles.featureTitle}>Pomodoro Timer</h2>
+            <p className={styles.featureDescription}>
+              Stay focused with our built-in Pomodoro timer. Track your study sessions and take breaks efficiently.
+            </p>
+          </div>
+          <div className={styles.featureImageWrapper}>
+            <img src="/feature-pomodoro.png" alt="Pomodoro feature" className={styles.featureImage} />
+          </div>
+        </div>
+
+        <div
+          ref={feature5Ref}
+          className={`${styles.featureItem} ${styles[featureStates.feature5]}`}
+        >
+          <div className={styles.featureContent}>
+            <h2 className={styles.featureTitle}>Interactive Study Modes</h2>
+            <p className={styles.featureDescription}>
+              Test your knowledge with our interactive Voice (Viva) and Text modes to enhance retention and remember even better.
+            </p>
+          </div>
+          <div className={styles.featureImageWrapper}>
+            <img src="/feature-modes.png" alt="Modes feature" className={styles.featureImage} />
+          </div>
+        </div>
+      </section>
 
       <footer className={styles.footer}>
         <a href="/about-us">About Us</a>
