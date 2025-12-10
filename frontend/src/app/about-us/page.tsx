@@ -11,23 +11,23 @@ export default function AboutUsPage() {
         <h1 className={styles.title}>About Us</h1>
         <ul className={styles.list}>
           <li>
-            <strong>Shoaib Salim Attar</strong> &ndash; Founder and CEO
-          </li>
-          <li>
             <strong>Ashutosh Thakur</strong> &ndash; CTO
           </li>
           <li>
-            <strong>Priya Bhatt</strong> &ndash; Marketing and Branding Head
-          </li>
-          <li>
-            <strong>Priyansh Jain</strong> &ndash; Business Strategist and
-            Adviser
+            <strong>Dr. Ibrahim Ahsan Abdullah</strong> &ndash; Business Head
           </li>
           <li>
             <strong>Jaivardhan Bhola</strong> &ndash; Head of App Development
           </li>
           <li>
-            <strong>Ibrahim Ahsan Abdullah</strong> &ndash; Business Head
+            <strong>Priya Bhatt</strong> &ndash; Marketing and Branding Head
+          </li>
+          <li>
+            <strong>Dr. Priyansh Jain</strong> &ndash; Business Strategist and
+            Adviser
+          </li>
+          <li>
+            <strong>Dr. Shoaib Salim Attar</strong> &ndash; Founder and CEO
           </li>
         </ul>
       </article>
