@@ -14,7 +14,7 @@ export default function AboutUsPage() {
             <strong>Ashutosh Thakur</strong> &ndash; CTO
           </li>
           <li>
-            <strong>Dr. Ibrahim Ahsan Abdullah</strong> &ndash; Business Head
+            <strong>Ibrahim Ahsan Abdullah</strong> &ndash; Business Head
           </li>
           <li>
             <strong>Jaivardhan Bhola</strong> &ndash; Head of App Development
@@ -27,7 +27,7 @@ export default function AboutUsPage() {
             Adviser
           </li>
           <li>
-            <strong>Dr. Shoaib Salim Attar</strong> &ndash; Founder and CEO
+            <strong>Shoaib Salim Attar</strong> &ndash; Founder and CEO
           </li>
         </ul>
       </article>

@@ -245,7 +245,7 @@ export default function Home() {
 
       <section className={styles.downloadSection}>
         <div className={styles.downloadContainer}>
-          <img src="/neurema-mascot.svg" alt="Neurema Mascot" className={styles.downloadMascot} />
+          <img src="/neurema-mascot.png" alt="Neurema Mascot" className={styles.downloadMascot} />
           <a
             href="https://play.google.com/store/apps/details?id=com.neurema.neurema&pcampaignid=web_share"
             target="_blank"
@@ -253,7 +253,7 @@ export default function Home() {
             className={styles.downloadLink}
           >
             <span>Download Neurema on Play Store</span>
-            <img src="/playstore.svg" alt="Play Store" className={styles.playStoreIcon} />
+            <img src="/playstore.png" alt="Play Store" className={styles.playStoreIcon} />
           </a>
         </div>
       </section>
