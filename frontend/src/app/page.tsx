@@ -337,8 +337,9 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a href="/about-us">About Us</a>
-        <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+        <a href="/contact-us">Contact Us</a>
         <a href="/pricing">Pricing</a>
+        <a href="/terms-and-conditions">Terms &amp; Conditions</a>
       </footer>
 
       {isModalOpen && (
