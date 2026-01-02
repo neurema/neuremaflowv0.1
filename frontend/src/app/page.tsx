@@ -133,7 +133,7 @@ export default function Home() {
       closeModal();
       alert("Logged in successfully!");
 
-    } catch (_strapiError) {
+    } catch {
       // 3. If Strapi Login Fails, try Strapi Register
       try {
         // Using email as username for simplicity

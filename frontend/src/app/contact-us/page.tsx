@@ -53,7 +53,7 @@ export default function ContactUsPage() {
         <div>
           <h1 className={styles.title}>Contact Us</h1>
           <p className={styles.description}>
-            Have questions or feedback? We'd love to hear from you. Fill out the form below and our team will get back to you.
+            Have questions or feedback? We&apos;d love to hear from you. Fill out the form below and our team will get back to you.
           </p>
         </div>
 
