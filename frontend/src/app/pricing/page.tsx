@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
-import Link from "next/link";
+// import Link from "next/link"; // unused
 import homeStyles from "../page.module.css";
 import styles from "./pricing.module.css";
 import { pricingPlansByTier, type PricingTier } from "@/lib/pricing";

@@ -49,7 +49,7 @@ export default function StormPage() {
                         <div className={styles.featureContent}>
                             <h3 className={styles.featureTitle}>Instant Recall</h3>
                             <p className={styles.featureDesc}>
-                                Flashcards aren't just for your phone. See key terms and definitions overlaid on your real-world study materials, exactly when you need them.
+                                Flashcards aren&apos;t just for your phone. See key terms and definitions overlaid on your real-world study materials, exactly when you need them.
                             </p>
                         </div>
                         <div className={styles.featureVisual}>
@@ -76,7 +76,7 @@ export default function StormPage() {
                         <div className={styles.featureContent}>
                             <h3 className={styles.featureTitle}>Focus Filters</h3>
                             <p className={styles.featureDesc}>
-                                Block out distractions. Storm can subtly dim your peripheral vision to create a "tunnel focus" effect, helping you lock in on your book or screen.
+                                Block out distractions. Storm can subtly dim your peripheral vision to create a &quot;tunnel focus&quot; effect, helping you lock in on your book or screen.
                             </p>
                         </div>
                         <div className={styles.featureVisual}>
@@ -89,7 +89,7 @@ export default function StormPage() {
                         <div className={styles.featureContent}>
                             <h3 className={styles.featureTitle}>Seamless Sync</h3>
                             <p className={styles.featureDesc}>
-                                Everything you capture with Storm instantly syncs to your Neurema App. Review your "Storm Notes" on your phone during your commute.
+                                Everything you capture with Storm instantly syncs to your Neurema App. Review your &quot;Storm Notes&quot; on your phone during your commute.
                             </p>
                         </div>
                         <div className={styles.featureVisual}>

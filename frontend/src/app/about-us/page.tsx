@@ -1,7 +1,7 @@
 ﻿'use client';
 
 import { useState, useEffect } from 'react';
-import Link from "next/link";
+// import Link from "next/link"; // unused
 import styles from "./about.module.css";
 
 const teamMembers = [

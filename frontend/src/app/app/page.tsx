@@ -1,6 +1,6 @@
 'use client';
 
-import { SiteHeader } from '@/components/SiteHeader';
+import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function AppPage() {
@@ -38,16 +38,18 @@ export default function AppPage() {
                         rel="noopener noreferrer"
                         className={styles.downloadButton}
                     >
-                        <img src="/playstore.png" alt="" className={styles.downloadIcon} />
+                        <Image src="/playstore.png" alt="" className={styles.downloadIcon} width={24} height={24} />
                         <span>Download on Play Store</span>
                     </a>
                 </div>
 
                 <div className={styles.heroVisual}>
-                    <img
+                    <Image
                         src="/feature-input.png"
                         alt="Neurema App Interface"
                         className={styles.phoneMockup}
+                        width={1024}
+                        height={312}
                     />
                 </div>
             </main>
@@ -66,7 +68,7 @@ export default function AppPage() {
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <img src="/feature-input.png" alt="Smart Input" className={styles.cardImage} />
+                            <Image src="/feature-input.png" alt="Smart Input" className={styles.cardImage} width={1024} height={312} />
                         </div>
                     </div>
 
@@ -79,7 +81,7 @@ export default function AppPage() {
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <img src="/feature-card.png" alt="Optimized Scheduling" className={styles.cardImage} />
+                            <Image src="/feature-card.png" alt="Optimized Scheduling" className={styles.cardImage} width={1024} height={613} />
                         </div>
                     </div>
 
@@ -92,7 +94,7 @@ export default function AppPage() {
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <img src="/feature-calendar.png" alt="Topic Bubbles" className={styles.cardImage} />
+                            <Image src="/feature-calendar.png" alt="Topic Bubbles" className={styles.cardImage} width={756} height={1024} />
                         </div>
                     </div>
 
@@ -105,7 +107,7 @@ export default function AppPage() {
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <img src="/feature-pomodoro.png" alt="Pomodoro Timer" className={styles.cardImage} />
+                            <Image src="/feature-pomodoro.png" alt="Pomodoro Timer" className={styles.cardImage} width={1024} height={827} />
                         </div>
                     </div>
 
@@ -114,11 +116,11 @@ export default function AppPage() {
                         <div className={styles.cardContent}>
                             <h3 className={styles.cardTitle}>Viva & Text Modes</h3>
                             <p className={styles.cardDesc}>
-                                Don't just read. Speak. Our Interactive Voice Mode simulates a real viva exam to check your true understanding.
+                                Don&apos;t just read. Speak. Our Interactive Voice Mode simulates a real viva exam to check your true understanding.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <img src="/feature-modes.png" alt="Study Modes" className={styles.cardImage} />
+                            <Image src="/feature-modes.png" alt="Study Modes" className={styles.cardImage} width={1024} height={675} />
                         </div>
                     </div>
 
@@ -127,11 +129,11 @@ export default function AppPage() {
                         <div className={styles.cardContent}>
                             <h3 className={styles.cardTitle}>Your Companion</h3>
                             <p className={styles.cardDesc}>
-                                You're not learning alone. Our friendly mascot guides you through your revision journey, keeping you motivated and on track.
+                                You&apos;re not learning alone. Our friendly mascot guides you through your revision journey, keeping you motivated and on track.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <img src="/neurema-mascot.png" alt="Neurema Mascot" className={styles.cardImage} style={{ maxHeight: '200px' }} />
+                            <Image src="/neurema-mascot.png" alt="Neurema Mascot" className={styles.cardImage} style={{ maxHeight: '200px' }} width={512} height={512} />
                         </div>
                     </div>
                 </div>
@@ -158,7 +160,7 @@ export default function AppPage() {
                         rel="noopener noreferrer"
                         className={styles.downloadButton}
                     >
-                        <img src="/playstore.png" alt="" className={styles.downloadIcon} />
+                        <Image src="/playstore.png" alt="" className={styles.downloadIcon} width={24} height={24} />
                         <span>Get it on Play Store</span>
                     </a>
                 </div>

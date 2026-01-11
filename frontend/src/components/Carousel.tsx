@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import styles from './Carousel.module.css';
 
 interface Slide {
@@ -55,7 +56,13 @@ export default function Carousel({ slides }: CarouselProps) {
                         key={index}
                         className={`${styles.slide} ${index === current ? styles.active : ''}`}
                     >
-                        <img src={slide.image} alt={slide.title || `Slide ${index}`} className={styles.slideImage} />
+                        <Image
+                            src={slide.image}
+                            alt={slide.title || `Slide ${index}`}
+                            className={styles.slideImage}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                        />
                         {(slide.title || slide.description) && (
                             <div className={styles.caption}>
                                 {slide.title && <h3 className={styles.captionTitle}>{slide.title}</h3>}

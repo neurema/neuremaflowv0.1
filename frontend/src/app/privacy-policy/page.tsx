@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link"; // unused
 import styles from "../info-page.module.css";
 
 export default function TermsAndConditionsPage() {
