@@ -8,7 +8,12 @@ import { loginStrapi, registerStrapi } from "@/lib/strapi";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 
 export default function Home() {
-  const navLinks: { href: string; label: string }[] = [];
+  const navLinks: { href: string; label: string }[] = [
+    { href: "/about-us", label: "About Us" },
+    { href: "/contact-us", label: "Contact Us" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/terms-and-conditions", label: "Terms & Conditions" },
+  ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -195,30 +200,8 @@ export default function Home() {
 
   return (
     <div className={styles.page} id="top">
-      <header className={styles.header}>
-        <a className={styles.logo} href="#top">
-          NEU<span>REMA</span>
-        </a>
-        <nav className={styles.nav}>
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-        <button
-          type="button"
-          className={styles.signIn}
-          onClick={openModal}
-          aria-haspopup="dialog"
-          aria-expanded={isModalOpen}
-        >
-          SIGN IN
-        </button>
-      </header>
-
       <main
-        className={styles.hero}
+        className={styles.main}
         style={{
           opacity: Math.max(0, 1 - scrollY / 500),
           transform: `translateY(${scrollY * 0.5}px)`,
@@ -244,16 +227,27 @@ export default function Home() {
       </main>
 
       <section className={styles.downloadSection}>
-        <div className={styles.downloadContainer}>
-          <img src="/neurema-mascot.png" alt="Neurema Mascot" className={styles.downloadMascot} />
+        <img src="/neurema-mascot.png" alt="Neurema Mascot" className={styles.downloadMascot} />
+        <div className={styles.buttonGroup}>
+          <a
+            href="https://apps.apple.com/in/app/neurema/id6757379395"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.downloadButton}
+          >
+            <svg viewBox="0 0 384 512" className={styles.downloadIcon} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z" />
+            </svg>
+            <span>Download on App Store</span>
+          </a>
           <a
             href="https://play.google.com/store/apps/details?id=com.neurema.neurema&pcampaignid=web_share"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.downloadLink}
+            className={styles.downloadButton}
           >
-            <span>Download Neurema on Play Store</span>
-            <img src="/playstore.png" alt="Play Store" className={styles.playStoreIcon} />
+            <img src="/playstore.png" alt="Play Store" className={styles.downloadIcon} />
+            <span>Download on Play Store</span>
           </a>
         </div>
       </section>
@@ -336,10 +330,7 @@ export default function Home() {
       </section>
 
       <footer className={styles.footer}>
-        <a href="/about-us">About Us</a>
-        <a href="/contact-us">Contact Us</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+        {/* Links moved to header */}
       </footer>
 
       {isModalOpen && (

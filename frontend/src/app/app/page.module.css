@@ -1,0 +1,400 @@
+/* Page Wrapper */
+.page {
+    min-height: 100vh;
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    font-family: var(--font-geist-sans), sans-serif;
+    position: relative;
+}
+
+/* Background Blobs */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    /* Softened blur */
+    z-index: 0;
+    opacity: 0.4;
+    /* Reduced opacity */
+    animation: float 10s infinite ease-in-out;
+}
+
+.blob1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+    top: -100px;
+    left: -100px;
+}
+
+.blob2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #42a5f5 0%, transparent 70%);
+    bottom: 0%;
+    right: -50px;
+    animation-delay: 2s;
+}
+
+/* Header/Nav */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Etna Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    /* Reduced from 700 to match main site */
+    letter-spacing: 0.08em;
+    /* Adjusted spacing to match main site */
+    text-transform: uppercase;
+    /* Match main site */
+}
+
+.logo span {
+    color: var(--color-accent-strong);
+    /* Match main site */
+}
+
+.backLink {
+    font-family: var(--font-geist-sans);
+    /* Match main site body font */
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.backLink:hover {
+    color: var(--color-text-primary);
+}
+
+/* Hero Section */
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 180px 2rem 4rem;
+    /* Increased top padding for fixed header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    border: 1px solid var(--color-pill-outline);
+    border-radius: 999px;
+    /* Match main site pill shape */
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(13, 18, 22, 0.7);
+    /* Match main site text color */
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(131, 71, 221, 0.08);
+}
+
+.headline {
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    color: var(--color-border);
+    /* Removed gradient to match main site clean look */
+}
+
+.accentText {
+    color: var(--color-accent-strong);
+}
+
+/* ... existing styles ... */
+
+.sectionTitle {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--color-border);
+    font-weight: 700;
+}
+
+.subhead {
+    font-size: 1.15rem;
+    color: rgba(13, 18, 22, 0.75);
+    /* Match main site muted text */
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.downloadButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--color-border);
+    color: #ffffff;
+    padding: 0.9rem 1.8rem;
+    /* Slightly smaller to fit two */
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.downloadButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.downloadIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Phone Mockup Floating */
+.heroVisual {
+    margin-top: 4rem;
+    position: relative;
+}
+
+.phoneMockup {
+    width: 280px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(13, 18, 22, 0.15));
+    /* Softer shadow */
+    animation: float 6s ease-in-out infinite;
+    transform: rotate(-3deg);
+    /* Reduced rotation */
+}
+
+/* Features List Section */
+.featuresSection {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 5;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #0d1216;
+    font-weight: 400;
+}
+
+.featuresList {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Feature Cards - Premium Clean Style */
+.glassCard {
+    background: #ffffff;
+    border: 1px solid rgba(13, 18, 22, 0.03);
+    border-radius: 32px;
+    padding: 4rem;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow:
+        0 20px 40px -4px rgba(131, 71, 221, 0.06),
+        0 8px 16px -4px rgba(0, 0, 0, 0.02);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.glassCard:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 32px 64px -8px rgba(131, 71, 221, 0.12),
+        0 12px 24px -6px rgba(0, 0, 0, 0.03);
+    border-color: rgba(131, 71, 221, 0.1);
+}
+
+/* Add a subtle gradient accent to the card background on hover? 
+   Maybe too much. Let's keep it clean. 
+*/
+
+/* Dark mode adjustment */
+@media (prefers-color-scheme: dark) {
+    .glassCard {
+        background: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px -4px rgba(0, 0, 0, 0.4);
+    }
+
+    .glassCard .cardTitle {
+        color: #ffffff;
+    }
+
+    .glassCard .cardDesc {
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+/* Specific Grid Items */
+.cardSmall {
+    grid-column: span 4;
+}
+
+/* Row Alternation */
+.featureRow {
+    flex-direction: row-reverse;
+}
+
+.featureRow:nth-child(even) {
+    flex-direction: row;
+}
+
+/* Content & Visuals */
+.cardContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 1rem;
+}
+
+.cardTitle {
+    font-family: var(--font-geist-sans);
+    font-size: 2.2rem;
+    /* Larger title */
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--color-border);
+    letter-spacing: -0.02em;
+}
+
+.cardDesc {
+    color: var(--color-text-muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 95%;
+    font-weight: 450;
+}
+
+.cardVisual {
+    flex: 1.2;
+    /* Give image slightly more space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 300px;
+    /* Add a subtle backing blob for the image? */
+}
+
+/* Use pseudo-element for subtle image backing glow */
+.cardVisual::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(131, 71, 221, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cardImage {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
+}
+
+.glassCard:hover .cardImage {
+    transform: scale(1.04) rotate(1deg);
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Footer CTA */
+.footerCta {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(131, 71, 221, 0.05) 100%);
+    /* Subtler background */
+    border-top: 1px solid rgba(13, 18, 22, 0.05);
+    /* Separator */
+    margin-top: 4rem;
+    border-radius: 0;
+}
+
+.footerTitle {
+    font-family: 'Etna Sans', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-border);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .cardSmall {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 3rem;
+    }
+
+    .bentoGrid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardLarge,
+    .cardMedium,
+    .cardSmall {
+        width: 100%;
+    }
+
+    .hero {
+        padding: 6rem 1.5rem 3rem;
+    }
+}

@@ -1,7 +1,7 @@
 .page {
   position: relative;
   min-height: 100vh;
-  padding: clamp(8px, 2vw, 32px) clamp(28px, 9vw, 160px);
+  padding: clamp(120px, 15vw, 160px) clamp(28px, 9vw, 160px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@
 .header {
   width: 100%;
   max-width: 100%;
-  padding: 20px clamp(28px, 9vw, 160px);
+  padding: 20px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -129,8 +129,8 @@
 
 .logo {
   font-size: clamp(1.5rem, 2vw + 1rem, 2.3rem);
-  font-weight: 700;
-  font-family: "Etna", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-family: "Etna Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.08em;
   color: var(--color-border);
   text-transform: uppercase;
@@ -140,19 +140,22 @@
   color: var(--color-accent-strong);
 }
 
-.downloadSection {
-  width: 100%;
-  padding: 40px 0;
+/* Shared Button Group for Home */
+.buttonGroup {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  position: relative;
-  z-index: 2;
+  gap: 12px;
 }
 
-.downloadContainer {
+.downloadButton {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--color-border);
+  font-weight: 600;
+  font-size: 0.95rem;
   padding: 12px 24px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
@@ -162,35 +165,40 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.downloadContainer:hover {
+.downloadButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.downloadIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Old mascot container logic */
+.downloadSection {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .downloadMascot {
   width: 48px;
   height: 48px;
-}
-
-.downloadLink {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--color-border);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.playStoreIcon {
-  width: 24px;
-  height: 24px;
+  margin-bottom: 10px;
 }
 
 .nav {
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
   gap: clamp(18px, 3.5vw, 36px);
   font-size: clamp(0.88rem, 0.7vw + 0.58rem, 1rem);
   font-weight: 500;
@@ -273,19 +281,8 @@
   z-index: 0;
 }
 
-
-
 .footer {
-  width: min(720px, 100%);
-  margin: clamp(48px, 8vw, 72px) auto 0;
-  display: flex;
-  justify-content: center;
-  gap: clamp(24px, 5vw, 56px);
-  font-size: clamp(0.88rem, 0.7vw + 0.58rem, 1rem);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: capitalize;
-  color: rgba(13, 18, 22, 0.72);
+  display: none;
 }
 
 .footer a {

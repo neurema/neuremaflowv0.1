@@ -15,28 +15,12 @@ export default function PricingPage() {
   const [activeTier, setActiveTier] = useState<PricingTier>("personal");
   const plans = pricingPlansByTier[activeTier];
 
-  const navLinks: { href: string; label: string }[] = [];
-
   return (
     <div className={homeStyles.page}>
-      <header className={homeStyles.header}>
-        <Link className={homeStyles.logo} href="/">
-          NEU<span>REMA</span>
-        </Link>
-        <nav className={homeStyles.nav}>
-          {navLinks.map((link) => (
-            <Link key={link.label} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <button type="button" className={homeStyles.signIn}>
-          SIGN IN
-        </button>
-      </header>
+
 
       <main className={styles.main}>
-        <h1 className={styles.heading}>Upgrade your plan</h1>
+        <h1 className={styles.heading}>Unlock <span className={styles.accentText}>Your Potential</span></h1>
 
         <div className={styles.tierToggle}>
           <div className={styles.tierPill}>
@@ -44,9 +28,8 @@ export default function PricingPage() {
               <button
                 key={tier.id}
                 type="button"
-                className={`${styles.tierButton} ${
-                  activeTier === tier.id ? styles.tierButtonActive : ""
-                }`}
+                className={`${styles.tierButton} ${activeTier === tier.id ? styles.tierButtonActive : ""
+                  }`}
                 onClick={() => setActiveTier(tier.id)}
               >
                 {tier.label}

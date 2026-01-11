@@ -5,10 +5,8 @@ export default function TermsAndConditionsPage() {
   return (
     <div className={styles.container}>
       <article className={styles.inner}>
-        <Link href="/" className={styles.backLink}>
-          Back to home
-        </Link>
-        <h1 className={styles.title}>Neurema Privacy Policy</h1>
+
+        <h1 className={styles.title}>Neurema <span className={styles.accentText}>Privacy Policy</span></h1>
         <p className={styles.subtitle}>Effective date: 29 October 2025</p>
         <p className={styles.paragraph}>
           Neurema helps people of all ages study and remember better. This

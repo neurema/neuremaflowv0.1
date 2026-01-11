@@ -8,11 +8,16 @@
 }
 
 .heading {
-  font-size: clamp(2.1rem, 3vw, 2.6rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   text-align: center;
-  letter-spacing: 0.02em;
-  color: #111317;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-border);
+}
+
+.accentText {
+  color: var(--color-accent-strong);
 }
 
 .tierToggle {

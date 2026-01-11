@@ -46,12 +46,10 @@ export default function ContactUsPage() {
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.backLink}>
-          Back to home
-        </Link>
+
 
         <div>
-          <h1 className={styles.title}>Contact Us</h1>
+          <h1 className={styles.title}>Contact <span className={styles.accentText}>Us</span></h1>
           <p className={styles.description}>
             Have questions or feedback? We&apos;d love to hear from you. Fill out the form below and our team will get back to you.
           </p>
