@@ -1,13 +1,12 @@
 .page {
   position: relative;
   min-height: 100vh;
-  padding: clamp(120px, 15vw, 160px) clamp(28px, 9vw, 160px);
+  padding: 0;
+  /* Remove padding to allow full-screen hero */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: clamp(48px, 7vw, 96px);
   background: var(--color-background);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .header {
@@ -28,104 +27,6 @@
   transition: all 0.3s ease;
 }
 
-.features {
-  width: min(1160px, 100%);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 200px;
-  padding: 120px 0;
-  position: relative;
-  z-index: 2;
-}
-
-.featureItem {
-  display: flex;
-  align-items: center;
-  gap: clamp(40px, 8vw, 120px);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.5s ease, transform 1.5s ease, filter 1.5s ease;
-}
-
-.featureItem.visible {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
-
-.featureItem.exiting {
-  opacity: 0;
-  transform: translateY(-40px) scale(0.95);
-  filter: blur(10px);
-}
-
-.featureItem.hidden {
-  opacity: 0;
-}
-
-.featureItem:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.featureContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  text-align: left;
-}
-
-.featureTitle {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--color-border);
-  line-height: 1.1;
-}
-
-.featureDescription {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(13, 18, 22, 0.75);
-}
-
-.featureImageWrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.featureImage {
-  width: 100%;
-  height: auto;
-  max-width: 500px;
-  border-radius: 24px;
-  box-shadow: 0 24px 48px rgba(13, 18, 22, 0.12);
-  transition: transform 0.5s ease;
-}
-
-.featureItem:hover .featureImage {
-  transform: scale(1.02);
-}
-
-@media (max-width: 960px) {
-  .featureItem {
-    flex-direction: column;
-    text-align: center;
-    gap: 48px;
-  }
-
-  .featureItem:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .featureContent {
-    align-items: center;
-    text-align: center;
-  }
-}
 
 .logo {
   font-size: clamp(1.5rem, 2vw + 1rem, 2.3rem);
@@ -140,60 +41,7 @@
   color: var(--color-accent-strong);
 }
 
-/* Shared Button Group for Home */
-.buttonGroup {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
 
-.downloadButton {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--color-border);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  border-radius: 999px;
-  border: 1px solid rgba(13, 18, 22, 0.08);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.downloadButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-}
-
-.downloadIcon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-
-/* Old mascot container logic */
-.downloadSection {
-  width: 100%;
-  padding: 40px 0;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  gap: 20px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.downloadMascot {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 10px;
-}
 
 .nav {
   display: flex;

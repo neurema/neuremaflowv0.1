@@ -1,0 +1,225 @@
+.carouselWrapper {
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    /* slightly deeper */
+}
+
+.scene {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateZ(-200px) rotateY(10deg);
+    /* Initial state */
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateZ(0) rotateY(0deg);
+    z-index: 10;
+}
+
+/* Slide Content Layout */
+.contentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 4rem;
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: 10;
+}
+
+.textContent {
+    flex: 1;
+    max-width: 650px;
+    z-index: 20;
+    transform: translateZ(50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bigTitle {
+    font-size: 18rem;
+    font-weight: 800;
+    line-height: 0.8;
+    letter-spacing: -0.06em;
+    color: var(--color-border);
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%) translateZ(-100px);
+    z-index: -1;
+    opacity: 0.03;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+.mainTitle {
+    font-size: clamp(4rem, 6vw, 7.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--color-text-primary);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 2.5rem;
+}
+
+.textSuffix {
+    display: block;
+    color: var(--color-accent);
+}
+
+/* Canvas Container for 3D Scene */
+.canvasContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Behind text interaction but visible */
+    pointer-events: none;
+}
+
+/* Placeholder to push text left */
+.productDisplayPlaceholder {
+    flex: 1.2;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Call to Action */
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: var(--color-accent);
+    color: white;
+    padding: 1.25rem 2.5rem;
+    border-radius: 100px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(131, 71, 221, 0.25);
+    pointer-events: auto;
+    width: fit-content;
+    position: relative;
+    z-index: 30;
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: var(--color-accent-strong);
+    box-shadow: 0 20px 40px rgba(131, 71, 221, 0.35);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateZ(120px) rotateY(-10deg);
+    }
+
+    50% {
+        transform: translateY(-15px) translateZ(120px) rotateY(-10deg);
+    }
+}
+
+.controls {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(13, 18, 22, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(13, 18, 22, 0.5);
+}
+
+.activeDot {
+    background: var(--color-accent);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .contentContainer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding-top: 4rem;
+    }
+
+    .bigTitle {
+        display: none;
+    }
+
+    .mainTitle {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .textContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .productDisplay {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .productImage {
+        max-height: 250px;
+    }
+
+    .floatingCard {
+        display: none;
+        /* Simplify for mobile */
+    }
+}
