@@ -2,9 +2,10 @@
 
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { MeshTransmissionMaterial, Html } from '@react-three/drei';
+import { MeshTransmissionMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function HeadsetModel(props: any) {
     const group = useRef<THREE.Group>(null);
 

@@ -1,7 +1,6 @@
 ﻿'use client';
 
 import { FormEvent, useEffect, useState } from "react";
-import Image from "next/image";
 
 import styles from "./page.module.css";
 import { loginStrapi, registerStrapi } from "@/lib/strapi";
@@ -15,7 +14,6 @@ export default function Home() {
   // const openModal = () => setIsModalOpen(true); // unused
   const closeModal = () => setIsModalOpen(false);
 
-  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     if (!isModalOpen) {

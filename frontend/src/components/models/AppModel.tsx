@@ -5,6 +5,7 @@ import { useFrame } from '@react-three/fiber';
 import { Text, Float, RoundedBox } from '@react-three/drei';
 import * as THREE from 'three';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function AppModel(props: any) {
     const group = useRef<THREE.Group>(null);
 

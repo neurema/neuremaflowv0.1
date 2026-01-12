@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, ContactShadows, OrbitControls } from '@react-three/drei';
+import { Environment, ContactShadows } from '@react-three/drei';
 import { HeadsetModel } from './models/HeadsetModel';
 import { AppModel } from './models/AppModel';
 
