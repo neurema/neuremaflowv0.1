@@ -327,3 +327,24 @@
         /* Slightly smaller on mobile */
     }
 }
+
+/* Centered Feature - Last Item */
+.centeredFeature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.centeredFeature .featureTitle {
+    text-align: center;
+}
+
+.centeredFeature .featureDesc {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 800px;
+}

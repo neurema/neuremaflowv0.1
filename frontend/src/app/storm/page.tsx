@@ -104,21 +104,12 @@ export default function StormPage() {
                     </div>
 
                     {/* Feature 4 */}
-                    <div className={styles.featureRow}>
+                    <div className={styles.centeredFeature}>
                         <div className={styles.featureContent}>
                             <h3 className={styles.featureTitle}>Stronger Attention Over Time</h3>
                             <p className={styles.featureDesc}>
                                 Focus is a skill, not a talent. We give you the data-driven roadmap to build an unshakeable attention span that lasts long after you take the device off.
                             </p>
-                        </div>
-                        <div className={styles.featureVisual}>
-                            <Image
-                                src="/wearable5.jpeg"
-                                alt="Attention Span"
-                                width={500}
-                                height={300}
-                                className={styles.featureImage}
-                            />
                         </div>
                     </div>
                 </div>
