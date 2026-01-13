@@ -24,28 +24,18 @@ export default function TermsAndConditionsPage() {
           <p className={styles.paragraph}>
             Neurema (&quot;Neurema&quot;, &quot;we&quot;, &quot;us&quot;) operates the Services.
           </p>
-          <ul className={styles.list}>
-            <li>
-              <strong>Email:</strong> neurema.in@gmail.com
-            </li>
-            <li>
-              <strong>Postal address:</strong> No.24, 2nd Floor, Karna Shree Layout, 1st
-              Cross, Medahalli, Virgonagar Post, Bengaluru, Karnataka, India
-              560049
-            </li>
-            <li>
-              <strong>Grievance Officer (India):</strong> To be updated
-            </li>
-            <li>
-              <strong>Email:</strong> neurema.in@gmail.com
-            </li>
-            <li>
-              <strong>Address:</strong> Bangalore, Karnataka, India
-            </li>
-            <li>
-              <strong>Phone:</strong> To be updated
-            </li>
-          </ul>
+          <li>
+            <strong>Email:</strong> support@neurema.com
+          </li>
+          <li>
+            <strong>Phone:</strong> +91 77959 77671
+          </li>
+          <li>
+            <strong>Postal address:</strong> No.24, 3rd Floor, Karna Shree Layout, Virgonagar, Bangalore North, Bangalore- 560049, Karnataka
+          </li>
+          <li>
+            <strong>Grievance Officer (India):</strong> To be updated
+          </li>
         </section>
 
         <section className={styles.section}>
