@@ -4,7 +4,7 @@
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    background-color: #ffffff;
+    background-color: var(--color-background);
     font-family: var(--font-geist-sans);
     color: #000;
 }
@@ -83,7 +83,7 @@
     font-weight: 700;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
-    color: #000;
+    color: var(--color-border);
 }
 
 .accentText {
@@ -96,13 +96,13 @@
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 5rem;
-    color: #000;
+    color: var(--color-border);
     font-weight: 700;
 }
 
 .subhead {
     font-size: clamp(1.1rem, 2vw, 1.4rem);
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--color-text-muted);
     /* Assuming variable exists or use fallback */
     max-width: 600px;
     margin-bottom: 3rem;
@@ -114,7 +114,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem 3rem;
-    background: #000;
+    background: var(--color-border);
     color: #fff;
     border-radius: 999px;
     font-weight: 600;
@@ -127,7 +127,7 @@
 .waitlistButton:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    background: #333;
+    background: #000;
 }
 
 
@@ -168,7 +168,7 @@
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 5rem;
-    color: #000;
+    color: var(--color-border);
     font-weight: 700;
 }
 
@@ -199,14 +199,14 @@
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #000;
+    color: var(--color-border);
     letter-spacing: -0.02em;
 }
 
 .featureDesc {
     font-size: 1.15rem;
     line-height: 1.6;
-    color: rgba(0, 0, 0, 0.7);
+    color: #555;
     max-width: 90%;
 }
 
@@ -239,44 +239,7 @@
     /* Rounding the image itself */
 }
 
-/* Dark Mode Overrides - REFACTORED to ENFORCE Light Mode */
-@media (prefers-color-scheme: dark) {
 
-    .hero,
-    .sectionTitle,
-    .featureTitle,
-    .headline {
-        color: #000;
-    }
-
-    .subhead,
-    .featureDesc {
-        color: rgba(0, 0, 0, 0.7);
-    }
-
-    .waitlistButton {
-        background: #000;
-        color: #fff;
-    }
-
-    .waitlistButton:hover {
-        background: #333;
-    }
-
-    .productHeroVisual {
-        /* Keep it light */
-        background: linear-gradient(135deg, #ffffff 0%, #f4f4f5 100%);
-        box-shadow:
-            0 24px 48px -12px rgba(0, 0, 0, 0.1),
-            inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-    }
-
-    .featureVisual {
-        background: transparent;
-        border-color: transparent;
-        box-shadow: none;
-    }
-}
 
 /* Tech Specs Badge Grid (Optional for hardware feel) */
 .specsGrid {
@@ -296,6 +259,8 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+
+
 .specLabel {
     display: block;
     font-size: 0.85rem;
@@ -308,4 +273,57 @@
 .specValue {
     font-size: 1.25rem;
     font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 3.5rem;
+        /* Smaller headline on mobile */
+    }
+
+    .hero {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Stack Feature Rows */
+    .featureRow,
+    .featureRow:nth-child(even) {
+        flex-direction: column;
+        /* Stack vertically: Text then Image */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .featureTitle {
+        font-size: 1.75rem;
+        /* Smaller title */
+        text-align: center;
+    }
+
+    .featureDesc {
+        margin: 0 auto;
+        /* Center align description */
+        max-width: 100%;
+    }
+
+    .featureVisual {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .featureImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .specValue {
+        font-size: 1.25rem;
+        /* Slightly smaller on mobile */
+    }
 }

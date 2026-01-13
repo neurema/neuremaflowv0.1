@@ -395,4 +395,57 @@
     .hero {
         padding: 6rem 1.5rem 3rem;
     }
+
+    /* Mobile Features Fix */
+    .featureRow,
+    .featureRow:nth-child(even) {
+        flex-direction: column-reverse;
+        /* Text top, Image bottom? Or Column? Default DOM is Content then Visual. If we want Image top, use column-reverse? No. DOM is Content, Visual.
+           col-reverse -> Visual (top), Content (bottom). 
+           col -> Content (top), Visual (bottom).
+           Usually "Image then Text" is better for mobile flow? Or Text then Image?
+           Let's look at the "App" page content. "Learning that sticks..." text, then Image.
+           If we use column-reverse: Image, then Text.
+           Let's stick to column (Content then Image) for now as simpler, OR column-reverse if the user wants "visual first". 
+           Actually, the "Normal App" page has "You focus on studying" then image.
+           Let's use column (Text then Image) which is the natural DOM order. 
+           WAIT.
+           .featureRow default is row-reverse.
+           .featureRow:nth-child(even) is row.
+           
+           I will force both to be 'column' (Text Top, Image Bottom) or 'column-reverse' (Image Top, Text Bottom).
+           Let's go with 'column' (Text Top).
+        */
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cardContent {
+        text-align: center;
+        padding: 0;
+    }
+
+    .cardVisual {
+        width: 100%;
+        max-width: 400px;
+        /* Limit image size on mobile */
+        margin: 0 auto;
+    }
+
+    .cardImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .cardTitle {
+        font-size: 1.75rem;
+        /* Smaller title on mobile */
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
 }
