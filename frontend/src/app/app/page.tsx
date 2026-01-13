@@ -14,7 +14,7 @@ export default function AppPage() {
             <main className={styles.hero}>
                 <div className={styles.badge}>Available on iOS & Android</div>
                 <h1 className={styles.headline}>
-                    YOUR BRAIN'S SMARTEST<br /><span className={styles.accentText}>STUDY PARTNER</span>
+                    YOUR BRAIN&apos;S SMARTEST<br /><span className={styles.accentText}>STUDY PARTNER</span>
                 </h1>
                 <p className={styles.subhead}>
                     Neurema converts passive reading into active recall, spaced perfectly for long-term mastery.

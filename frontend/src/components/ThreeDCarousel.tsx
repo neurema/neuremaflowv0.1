@@ -17,24 +17,24 @@ interface SlideData {
 
 const slides: SlideData[] = [
     {
-        id: 'app',
-        type: 'app',
-        mainTitle: 'Digital',
-        suffix: 'BrainStorm.',
-        bgTitle: 'BrainStorm',
-        description: 'Transform short-term knowledge into long-term memory with neuroscience-grounded revision.',
-        ctaLabel: 'Discover App',
-        ctaLink: '/app'
-    },
-    {
         id: 'glasses',
         type: 'product',
-        mainTitle: 'Experience',
-        suffix: 'more.',
-        bgTitle: 'Experience',
-        description: 'Ultra-clear 8K optics. Seamless motion tracking. The future of memory retention is here.',
-        ctaLabel: 'Discover Storm',
+        mainTitle: 'Insight in the',
+        suffix: 'Blink of an Eye.',
+        bgTitle: 'Storm',
+        description: 'Advanced pupillometry and EEG sensors seamlessly integrated into a lightweight frame. See how your brain works.',
+        ctaLabel: 'Discover the Tech',
         ctaLink: '/storm'
+    },
+    {
+        id: 'app',
+        type: 'app',
+        mainTitle: 'Because Knowledge',
+        suffix: 'Deserves to Stay.',
+        bgTitle: 'Neurema',
+        description: 'Don\'t just review information, absorb it. Neurema bridges the gap between studying today and remembering tomorrow.',
+        ctaLabel: 'See How It Works',
+        ctaLink: '/app'
     }
 ];
 

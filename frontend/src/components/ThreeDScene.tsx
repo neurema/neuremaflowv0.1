@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, ContactShadows } from '@react-three/drei';
+import { ContactShadows } from '@react-three/drei';
 import { OculosModel } from './models/OculosModel';
 import { AppModel } from './models/AppModel';
 
@@ -29,11 +29,14 @@ export default function ThreeDScene({ activeSlide, mousePos }: ThreeDSceneProps)
                 {/* Adjusted position to define "Product Side" (Right) */}
                 <group position={[1.6, 0, 0]} rotation={[mousePos.y * 0.05, mousePos.x * 0.05, 0]}>
                     <group visible={activeSlide === 0}>
-                        <AppModel scale={0.8} rotation={[0, -0.3, 0]} />
+                        <OculosModel scale={1.5} rotation={[0, -Math.PI / 6, 0]} />
                     </group>
 
                     <group visible={activeSlide === 1}>
-                        <OculosModel scale={1.5} rotation={[0, -Math.PI / 6, 0]} />
+                        {/* App model might need different rotation */}
+                        <group rotation={[0, -0.3, 0]}>
+                            <AppModel scale={0.8} />
+                        </group>
                     </group>
                 </group>
 

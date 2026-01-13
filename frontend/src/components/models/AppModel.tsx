@@ -1,164 +1,83 @@
 'use client';
 
-import React, { useMemo, useLayoutEffect, useState } from 'react';
-import { useLoader } from '@react-three/fiber';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
-import { TextureLoader } from 'three';
+import React, { useRef, useMemo } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { useGLTF, useTexture, Float, Decal } from '@react-three/drei';
 import * as THREE from 'three';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function AppModel(props: any) {
-    const obj = useLoader(OBJLoader, '/iphone17.obj') as THREE.Group;
-    // Using app1.png as fallback since app12.png was not found in the workspace
-    const texture = useLoader(TextureLoader, '/app1.png');
+    const group = useRef<THREE.Group>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { nodes } = useGLTF('/iphone-optimized.glb') as any; // Type casting for convenience
+    const screenTexture = useTexture('/screen.jpg');
 
-    const scene = useMemo(() => obj.clone(true), [obj]);
+    // 1. CONFIG: Fix the texture direction
+    screenTexture.flipY = true;
+    screenTexture.colorSpace = THREE.SRGBColorSpace;
 
-    // Internal transforms to center and normalize size
-    const [internalTransform, setInternalTransform] = useState({
-        position: new THREE.Vector3(),
-        scale: new THREE.Vector3(1, 1, 1)
+    const UNIT_SCALE = 99;
+
+    // 3. LOGIC: Find the specific screen node automatically
+    // We memoize this so it doesn't run every frame
+    const screenGeometry = useMemo(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const screenNode = Object.values(nodes).find((node: any) =>
+            node.isMesh && node.material.name === '4130c6244c49c5d5712e'
+        ) as THREE.Mesh;
+
+        return screenNode ? screenNode.geometry : null;
+    }, [nodes]);
+
+    useFrame((state) => {
+        const t = state.clock.getElapsedTime();
+        if (group.current) {
+            group.current.rotation.x = Math.sin(t * 0.2) * 0.05;
+            group.current.rotation.y = Math.sin(t * 0.3) * 0.05;
+        }
     });
 
-    useLayoutEffect(() => {
-        // 1. Reset visibility
-        scene.traverse((child) => {
-            child.visible = true;
-        });
-
-        // 2. Identify "Target" (Grey/Titanium Phone) Bounds
-        const targetBox = new THREE.Box3();
-        let foundTarget = false;
-
-        scene.traverse((child) => {
-            if ((child as THREE.Mesh).isMesh) {
-                const mesh = child as THREE.Mesh;
-                const mat = mesh.material as THREE.Material;
-                const matName = mat.name || '';
-
-                // Identify the main body of the variant we want (Grey/Black)
-                if (matName.toLowerCase().includes('grey') || matName.toLowerCase().includes('black') || matName.toLowerCase().includes('titanium')) {
-                    if (mesh.geometry) {
-                        mesh.geometry.computeBoundingBox();
-                        const box = mesh.geometry.boundingBox!.clone();
-                        box.applyMatrix4(mesh.matrix); // Transform to parent space
-                        targetBox.union(box);
-                        foundTarget = true;
-                    }
-                }
-            }
-        });
-
-        // If we found the Grey phone, filter everything else by position
-        if (foundTarget) {
-            // Expand box slightly to include attached parts (cameras, buttons) that might stick out
-            const keepBox = targetBox.clone().expandByScalar(0.2);
-
-            scene.traverse((child) => {
-                if ((child as THREE.Mesh).isMesh) {
-                    const mesh = child as THREE.Mesh;
-                    // Check if mesh center is inside keepBox
-                    if (mesh.geometry) {
-                        mesh.geometry.computeBoundingBox();
-                        const center = new THREE.Vector3();
-                        mesh.geometry.boundingBox!.getCenter(center);
-                        center.applyMatrix4(mesh.matrix); // To Parent Space
-
-                        if (!keepBox.containsPoint(center)) {
-                            mesh.visible = false;
-                        }
-                    }
-                }
-            });
-        }
-
-        // 3. Apply Materials to Visible Meshes
-        scene.traverse((child) => {
-            if (child.visible && (child as THREE.Mesh).isMesh) {
-                const mesh = child as THREE.Mesh;
-                const mat = mesh.material as THREE.Material;
-                const matName = mat.name || '';
-
-                if (matName.includes('Display') && !matName.includes('Borders')) {
-                    // SCREEN
-                    mesh.material = new THREE.MeshStandardMaterial({
-                        map: texture,
-                        roughness: 0.2,
-                        metalness: 0.1,
-                        emissive: new THREE.Color(0xffffff),
-                        emissiveMap: texture,
-                        emissiveIntensity: 0.2,
-                        name: 'DisplayMaterial'
-                    });
-                    (mesh.material as THREE.MeshStandardMaterial).color.set(0xffffff);
-                } else if (matName.includes('Body') || matName.includes('Metal') || matName.includes('Grey') || matName.includes('Side')) {
-                    // BODY - Dark Titanium look
-                    mesh.material = new THREE.MeshStandardMaterial({
-                        color: new THREE.Color('#2A2A2A'),
-                        roughness: 0.4,
-                        metalness: 0.8,
-                        name: 'BodyMaterial'
-                    });
-                } else if (matName.includes('Glass') || matName.includes('Cam')) {
-                    // GLASS / CAMERAS
-                    mesh.material = new THREE.MeshStandardMaterial({
-                        color: new THREE.Color('#111111'),
-                        roughness: 0.1,
-                        metalness: 0.9,
-                        transparent: true,
-                        opacity: 0.9,
-                        name: 'GlassMaterial'
-                    });
-                }
-            }
-        });
-
-        // 4. Compute Bounding Box of ONLY visible parts for centering
-        const finalBox = new THREE.Box3();
-        scene.traverse((child) => {
-            if (child.visible && (child as THREE.Mesh).isMesh) {
-                const mesh = child as THREE.Mesh;
-                if (mesh.geometry) {
-                    mesh.geometry.computeBoundingBox();
-                    const box = mesh.geometry.boundingBox!.clone();
-                    box.applyMatrix4(mesh.matrix);
-                    finalBox.union(box);
-                }
-            }
-        });
-
-        if (!finalBox.isEmpty()) {
-            const center = finalBox.getCenter(new THREE.Vector3());
-            const size = finalBox.getSize(new THREE.Vector3());
-
-            // Center: Negative of center
-            const pos = center.clone().negate();
-
-            // Scale: Target height ~3 units (matching previous box)
-            const targetHeight = 3;
-            // Avoid division by zero
-            const s = (size.y > 0.001) ? (targetHeight / size.y) : 1;
-
-            // Correct position calculation:
-            // We want the resulting center to be 0,0,0.
-            // Current center is C.
-            // We apply scale S. Center becomes S*C.
-            // We need to translate by -S*C.
-            setInternalTransform({
-                scale: new THREE.Vector3(s, s, s),
-                position: center.multiplyScalar(-s)
-            });
-        }
-
-    }, [scene, texture]);
-
     return (
-        <group {...props}>
-            <primitive
-                object={scene}
-                scale={internalTransform.scale}
-                position={internalTransform.position}
-            />
+        <group ref={group} {...props} dispose={null}>
+            <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+
+                {/* RENDER 1: The Phone Body (Everything EXCEPT the screen) */}
+                {/* We filter out the screen mesh to avoid Z-fighting (two screens in same place) */}
+                <primitive
+                    object={nodes.Scene || nodes.iphone_body} // Adjust based on your root node name
+                    scale={0.25}
+                    visible={true}
+                />
+
+                {/* RENDER 2: The Screen (Manual Control) */}
+                {/* We render the screen manually so we can put the Decal INSIDE it */}
+                {screenGeometry && (
+                    <mesh
+                        geometry={screenGeometry}
+                        scale={0.25} // Must match the primitive scale above!
+                    >
+                        {/* Base black screen material */}
+                        <meshStandardMaterial color="black" roughness={0.2} />
+
+                        {/* The Image Sticker */}
+                        <Decal
+                            // debug // <--- UNCOMMENT THIS to see a yellow box helper around the decal
+                            position={[0, 0, 0]}
+                            rotation={[0, 0, 0]}
+                            // Scale: Width, Height, Depth
+                            scale={[
+                                0.071 * UNIT_SCALE,
+                                0.147 * UNIT_SCALE,
+                                1
+                            ]}
+                            map={screenTexture}
+                        />
+                    </mesh>
+                )}
+
+            </Float>
         </group>
     );
 }
+
+useGLTF.preload('/iphone-optimized.glb');

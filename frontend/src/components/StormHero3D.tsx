@@ -1,8 +1,8 @@
 'use client';
 
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, ContactShadows, OrbitControls } from '@react-three/drei';
+import { ContactShadows, OrbitControls } from '@react-three/drei';
 import { OculosModel } from './models/OculosModel';
 
 export default function StormHero3D() {
