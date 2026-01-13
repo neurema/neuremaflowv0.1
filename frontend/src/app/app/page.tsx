@@ -152,12 +152,9 @@ export default function AppPage() {
                     {/* 7. Exam confident */}
                     <div className={`${styles.glassCard} ${styles.featureRow}`}>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>Enter the exam calm and confident.</h3>
+                            <h3 className={styles.cardTitle}>Effortless Fusion</h3>
                             <p className={styles.cardDesc}>
-                                Beat cramming and memory drops.
-                                No panic revision. No forgetting.
-                                Just clear concepts on demand.
-                                Exams, simply handled.
+A whole new learning experience that ensures every lesson makes a meaningful impact.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
