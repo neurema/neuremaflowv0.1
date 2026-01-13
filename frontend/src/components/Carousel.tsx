@@ -5,9 +5,13 @@ import Image from 'next/image';
 import styles from './Carousel.module.css';
 
 interface Slide {
-    image: string;
+    image: string; // Keep for backward compatibility
+    src?: string; // Preferred new property
     title?: string;
     description?: string;
+    type?: 'image' | 'video';
+    rotation?: number;
+    scale?: number;
 }
 
 interface CarouselProps {
@@ -56,13 +60,34 @@ export default function Carousel({ slides }: CarouselProps) {
                         key={index}
                         className={`${styles.slide} ${index === current ? styles.active : ''}`}
                     >
-                        <Image
-                            src={slide.image}
-                            alt={slide.title || `Slide ${index}`}
-                            className={styles.slideImage}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                        />
+                        {slide.type === 'video' ? (
+                            <div className={styles.videoContainer}>
+                                <video
+                                    src={slide.src || slide.image}
+                                    className={styles.slideVideo}
+                                    style={{
+                                        transform: `
+                                            ${slide.rotation ? `rotate(${slide.rotation}deg)` : ''} 
+                                            ${slide.scale ? `scale(${slide.scale})` : ''}
+                                        `.trim() || undefined
+                                    }}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                />
+                            </div>
+                        ) : (
+                            <Image
+                                src={slide.src || slide.image}
+                                alt={slide.title || `Slide ${index}`}
+                                className={styles.slideImage}
+                                fill
+                                unoptimized
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                                style={slide.rotation ? { transform: `rotate(${slide.rotation}deg)` } : undefined}
+                            />
+                        )}
                         {(slide.title || slide.description) && (
                             <div className={styles.caption}>
                                 {slide.title && <h3 className={styles.captionTitle}>{slide.title}</h3>}

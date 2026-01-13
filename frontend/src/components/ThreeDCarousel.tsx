@@ -17,16 +17,6 @@ interface SlideData {
 
 const slides: SlideData[] = [
     {
-        id: 'glasses',
-        type: 'product',
-        mainTitle: 'Experience',
-        suffix: 'more.',
-        bgTitle: 'Experience',
-        description: 'Ultra-clear 8K optics. Seamless motion tracking. The future of memory retention is here.',
-        ctaLabel: 'Discover Storm',
-        ctaLink: '/storm'
-    },
-    {
         id: 'app',
         type: 'app',
         mainTitle: 'Digital',
@@ -35,6 +25,16 @@ const slides: SlideData[] = [
         description: 'Transform short-term knowledge into long-term memory with neuroscience-grounded revision.',
         ctaLabel: 'Discover App',
         ctaLink: '/app'
+    },
+    {
+        id: 'glasses',
+        type: 'product',
+        mainTitle: 'Experience',
+        suffix: 'more.',
+        bgTitle: 'Experience',
+        description: 'Ultra-clear 8K optics. Seamless motion tracking. The future of memory retention is here.',
+        ctaLabel: 'Discover Storm',
+        ctaLink: '/storm'
     }
 ];
 

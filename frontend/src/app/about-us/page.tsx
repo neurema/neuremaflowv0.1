@@ -1,45 +1,59 @@
 ﻿'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 // import Link from "next/link"; // unused
 import styles from "./about.module.css";
 
 const teamMembers = [
   {
     name: "Shoaib Salim Attar",
-    role: "Founder and CEO",
-    bio: "Visionary leader driving the mission to enhance human memory through technology.",
-    specialization: "Leadership"
+    role: "Chief Executive Officer (CEO)",
+    bio: "He guides the company's overall strategy and long-term direction. He works with the team to align resources and cultivate an innovative environment in pursuit of Neurema's mission.",
+    specialization: "Strategy & Vision",
+    image: "/Shoaib.jpeg"
   },
   {
-    name: "Ashutosh Thakur",
-    role: "CTO",
-    bio: "Technologist architecting the secure and scalable foundation of Neurema.",
-    specialization: "Technology"
+    name: "Priyansh Jain",
+    role: "Managing Director (MD)",
+    bio: "He provides strategic guidance to the leadership team and oversees general operations. He advises the board to help ensure the company's stability, business relations and effective day-to-day functioning.",
+    specialization: "Strategy & Operations",
+    image: "/Priyansh.jpeg"
   },
   {
     name: "Ibrahim Ahsan Abdullah",
-    role: "Business Head",
-    bio: "Strategist focused on sustainable growth and partnership development.",
-    specialization: "Business"
+    role: "Chief Operations Officer (COO)",
+    bio: "He focuses on business development and forming strategic partnerships. He works directly with educational institutions to build relationships and establish collaborative agreements.",
+    specialization: "Business & Partnerships",
+    image: "/Ibrahim.jpeg"
+  },
+  {
+    name: "Ashutosh Thakur",
+    role: "Chief Technology Officer (CTO)",
+    bio: "He leads the technical infrastructure and hardware engineering efforts. His focus is on wearable technology R&D and ensuring our hardware integrates smoothly with the software ecosystem.",
+    specialization: "Hardware & R&D",
+    image: "/Ashutosh.jpeg"
   },
   {
     name: "Jaivardhan Bhola",
-    role: "Head of App Development",
-    bio: "Crafting intuitive and seamless mobile experiences for learners worldwide.",
-    specialization: "Product"
+    role: "Chief Software Officer (CSO)",
+    bio: "He leads the software engineering team. He oversees the development and maintenance of the Neurema platform, ensuring a consistent and scalable experience across Android, iOS, and Web.",
+    specialization: "Software Engineering",
+    image: "/Jaivardhan.png"
   },
   {
     name: "Priya Bhatt",
-    role: "Marketing and Branding Head",
-    bio: "Storyteller building the Neurema brand and connecting with our community.",
-    specialization: "Marketing"
+    role: "Chief Creative Officer (CCO)",
+    bio: "She leads the visual identity and user experience design. She is responsible for the application interface and marketing materials, with a focus on creating an engaging and immersive experience for students.",
+    specialization: "Visual Identity & UX",
+    image: "/Priya.jpeg"
   },
   {
-    name: "Dr. Priyansh Jain",
-    role: "Business Strategist and Adviser",
-    bio: "Guiding the company with deep insights into business strategy and operations.",
-    specialization: "Advisory"
+    name: "Meshwa Ashokkumar Dahivelkar",
+    role: "Chief Research Officer (CRO)",
+    bio: "Manages pilot programs and research initiatives to validate the platform's efficacy in real-world classrooms. She coordinates with institutions and integrates user feedback into the product roadmap.",
+    specialization: "Research & Validation",
+    image: "/Meshwa.jpeg"
   }
 ];
 
@@ -82,7 +96,7 @@ export default function AboutUsPage() {
 
         <div className={styles.intro}>
           <h1 className={styles.introTitle}>
-            Our team of <span className={styles.serifItalic}>visionaries</span> is dedicated to <span className={styles.serifItalic}>effective</span> learning.
+            A team committed to making <span className={styles.serifItalic}>knowledge stick</span>.
           </h1>
         </div>
 
@@ -129,11 +143,13 @@ export default function AboutUsPage() {
             </div>
 
             <div className={styles.imageWrapper}>
-              {/* Using a placeholder since we don't have real photos yet */}
-              {/* Ideally: <img src={currentMember.image} alt={currentMember.name} className={styles.personImage} /> */}
-              <div className={styles.placeholderImage}>
-                {currentMember.name.charAt(0)}
-              </div>
+              <Image
+                src={currentMember.image}
+                alt={currentMember.name}
+                fill
+                className={styles.personImage}
+                style={{ objectFit: 'cover', objectPosition: 'top' }}
+              />
             </div>
           </div>
         </div>

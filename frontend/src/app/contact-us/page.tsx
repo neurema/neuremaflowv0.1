@@ -55,6 +55,11 @@ export default function ContactUsPage() {
           </p>
         </div>
 
+        <div className={styles.contactInfo}>
+          <p>Phone: <a href="tel:+917795977671" className={styles.contactLink}>+91 77959 77671</a></p>
+          <p>Email: <a href="mailto:shoaibsalimattar@neurema.com" className={styles.contactLink}>shoaibsalimattar@neurema.com</a></p>
+        </div>
+
         <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.field}>
             Name

@@ -139,7 +139,7 @@
     position: relative;
     /* Placeholder for product Hero Image */
     aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, #f5f5f7 0%, #e0e0e0 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f4f4f5 100%);
     border-radius: 32px;
     display: flex;
     align-items: center;
@@ -169,7 +169,7 @@
     text-align: center;
     margin-bottom: 5rem;
     color: var(--color-border);
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .featuresList {
@@ -213,23 +213,30 @@
 /* Feature Visual */
 .featureVisual {
     flex: 1;
-    background: #fff;
+    flex: 1;
+    /* Removed background/padding as requested */
+    background: transparent;
     border-radius: 24px;
-    padding: 2rem;
+    padding: 0;
     aspect-ratio: 4/3;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:
-        0 20px 40px -4px rgba(131, 71, 221, 0.08),
-        0 8px 16px -4px rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    /* Removed borders/shadows */
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+    /* Ensure image rounding */
 }
 
 .featureImage {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    /* Fill container */
+    object-fit: cover;
+    /* Cover container while maintaining aspect ratio if needed, or contain */
+    border-radius: 24px;
+    /* Rounding the image itself */
 }
 
 /* Dark Mode Overrides */
@@ -256,14 +263,15 @@
     }
 
     .productHeroVisual {
-        background: linear-gradient(135deg, #1f1f1f 0%, #111 100%);
+        /* Keeping product visual light for contrast with dark glasses */
+        /* background: linear-gradient(135deg, #1f1f1f 0%, #111 100%); */
         box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5);
     }
 
     .featureVisual {
-        background: #141414;
-        border-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 20px 40px -4px rgba(0, 0, 0, 0.4);
+        background: transparent;
+        border-color: transparent;
+        box-shadow: none;
     }
 }
 

@@ -7,7 +7,7 @@ export function SiteHeader() {
   const navLinks: { href: string; label: string }[] = [
     { href: "/app", label: "App" },
     { href: "/storm", label: "Storm" },
-    { href: "/collabs", label: "Collaborations" },
+    { href: "/collabs", label: "Collaboration and Research" },
     { href: "/about-us", label: "About Us" },
     { href: "/contact-us", label: "Contact Us" },
     { href: "/pricing", label: "Pricing" },

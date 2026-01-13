@@ -3,22 +3,18 @@ import Carousel from '@/components/Carousel';
 import { SiteHeader } from '@/components/SiteHeader';
 import styles from './page.module.css';
 
-const COLLAB_SLIDES = [
+const COLLAB_SLIDES: { type: 'video' | 'image'; src?: string; image: string; rotation?: number; scale?: number; title?: string; description?: string; }[] = [
     {
-        image: '/collab-stanford.png',
-        title: 'Stanford University',
-        description: 'Pioneering neuro-technology research partnership.',
+        type: 'video',
+        src: '/EW.mp4',
+        image: '/EW.mp4', // Fallback
+        rotation: -90,
+        scale: 1.5,
     },
-    {
-        image: '/collab-mit.png',
-        title: 'Stanford University',
-        description: 'Advanced Robotics Lab collaboration.',
-    },
-    {
-        image: '/collab-cambridge.png',
-        title: 'Stanford University',
-        description: 'Joint innovation campus initiative.',
-    },
+    ...Array.from({ length: 12 }, (_, i) => ({
+        image: `/EW${i + 1}.jpeg`,
+        type: 'image' as const,
+    })),
 ];
 
 export default function CollabsPage() {
@@ -28,7 +24,7 @@ export default function CollabsPage() {
 
             <section className={styles.hero}>
                 <h1 className={styles.title}>
-                    Global <span className={styles.highlight}>Collaborations</span>
+                    Global <span className={styles.highlight}>Collaboration and Research</span>
                 </h1>
                 <p className={styles.subtitle}>
                     Partnering with world-leading institutions to push the boundaries of what is possible.

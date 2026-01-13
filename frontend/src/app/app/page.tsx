@@ -14,10 +14,10 @@ export default function AppPage() {
             <main className={styles.hero}>
                 <div className={styles.badge}>Available on iOS & Android</div>
                 <h1 className={styles.headline}>
-                    YOUR POCKET<br /><span className={styles.accentText}>NEUROSCIENTIST</span>
+                    YOUR BRAIN'S SMARTEST<br /><span className={styles.accentText}>STUDY PARTNER</span>
                 </h1>
                 <p className={styles.subhead}>
-                    Stop letting knowledge rot. Transform short-term inputs into long-term mastery with the power of spaced repetition.
+                    Neurema converts passive reading into active recall, spaced perfectly for long-term mastery.
                 </p>
 
                 <div className={styles.buttonGroup}>
@@ -56,84 +56,112 @@ export default function AppPage() {
 
             {/* Features: Alternating Rows */}
             <section className={styles.featuresSection}>
-                <h2 className={styles.sectionTitle}>Everything you need to remember.</h2>
+                <h2 className={styles.sectionTitle}>Everything you need to <span className={styles.accentText}>remember.</span></h2>
 
                 <div className={styles.featuresList}>
-                    {/* 1. Smart Input */}
+                    {/* 1. Learning that sticks */}
                     <div className={`${styles.glassCard} ${styles.featureRow}`}>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>Smart Input</h3>
+                            <h3 className={styles.cardTitle}>Learning that sticks, not fades.</h3>
                             <p className={styles.cardDesc}>
-                                Just type what you learned. Our AI categorizes it, schedules it, and prepares it for your future self. No friction, just focus.
+                                Powered by cognitive science. It builds real memory through intelligent revisions and seamless tracking & delightful learning experience—so knowledge stays with you.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <Image src="/feature-input.png" alt="Smart Input" className={styles.cardImage} width={1024} height={312} />
+                            <Image src="/app1.png" alt="Learning that sticks" className={styles.cardImage} width={1024} height={1024} />
                         </div>
                     </div>
 
-                    {/* 2. Optimized Scheduling */}
+                    {/* 2. Focus on studying */}
                     <div className={`${styles.glassCard} ${styles.featureRow}`}>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>Optimized Scheduling</h3>
+                            <h3 className={styles.cardTitle}>You focus on studying.</h3>
                             <p className={styles.cardDesc}>
-                                Stop guessing when to revise. We calculate the perfect time to review each topic based on your memory strength, ensuring maximum retention.
+                                Neurema handles the revisions, organizes your topics, and makes sure nothing is forgotten.
+                                Turn your daily learning into lasting mastery, effortlessly.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <Image src="/feature-card.png" alt="Optimized Scheduling" className={styles.cardImage} width={1024} height={613} />
+                            <Image src="/app2.png" alt="Focus on studying" className={styles.cardImage} width={1024} height={1024} />
                         </div>
                     </div>
 
-                    {/* 3. Topic Bubbles */}
+                    {/* 3. Active learning */}
                     <div className={`${styles.glassCard} ${styles.featureRow}`}>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>Topic Bubbles</h3>
+                            <h3 className={styles.cardTitle}>Active learning starts with your voice.</h3>
                             <p className={styles.cardDesc}>
-                                Visualise your knowledge. Group related topics into bubbles to revise entire subjects in context when exams approach.
+                                You explain. NEM listens.
+                                It breaks down mistakes in real time. Get instant feedback on what you missed.
+                                Turn weak recall into strong concepts.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <Image src="/feature-calendar.png" alt="Topic Bubbles" className={styles.cardImage} width={756} height={1024} />
+                            <Image src="/app3.png" alt="Active learning" className={styles.cardImage} width={1024} height={1024} />
                         </div>
                     </div>
 
-                    {/* 4. Pomodoro Timer */}
+                    {/* 4. Get grilled */}
                     <div className={`${styles.glassCard} ${styles.featureRow}`}>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>Deep Focus</h3>
+                            <h3 className={styles.cardTitle}>Get grilled before the exam grills you.</h3>
                             <p className={styles.cardDesc}>
-                                Built-in Pomodoro timer tailored for study sessions. Track your focus time, take efficient breaks, and prevent burnout.
+                                Face real exam-style viva questions.
+                                Think aloud. Get corrected.
+                                Fix weak spots fast.
+                                Walk in confident.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <Image src="/feature-pomodoro.png" alt="Pomodoro Timer" className={styles.cardImage} width={1024} height={827} />
+                            <Image src="/app4.png" alt="Get grilled" className={styles.cardImage} width={1024} height={1024} />
                         </div>
                     </div>
 
-                    {/* 5. Interactive Modes */}
+                    {/* 5. Revision plan */}
                     <div className={`${styles.glassCard} ${styles.featureRow}`}>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>Viva & Text Modes</h3>
+                            <h3 className={styles.cardTitle}>Stop guessing your revision plan.</h3>
                             <p className={styles.cardDesc}>
-                                Don&apos;t just read. Speak. Our Interactive Voice Mode simulates a real viva exam to check your true understanding.
+                                Let Nem schedule what matters most.
+                                Timely revisions. Zero burnout.
+                                Retain concepts till exam day.
+                                Stay Exam ready.
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <Image src="/feature-modes.png" alt="Study Modes" className={styles.cardImage} width={1024} height={675} />
+                            <Image src="/app5.png" alt="Revision plan" className={styles.cardImage} width={1024} height={1024} />
                         </div>
                     </div>
 
-                    {/* 6. Study Companion */}
+                    {/* 6. Revise more */}
                     <div className={`${styles.glassCard} ${styles.featureRow}`}>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>Your Companion</h3>
+                            <h3 className={styles.cardTitle}>Revise more in less time.</h3>
                             <p className={styles.cardDesc}>
-                                You&apos;re not learning alone. Our friendly mascot guides you through your revision journey, keeping you motivated and on track.
+                                Cover 5 topics in the time of 1.
+                                Related concepts, grouped together.
+                                Stronger connections. Faster recall.
+                                Revise smarter for any exam
                             </p>
                         </div>
                         <div className={styles.cardVisual}>
-                            <Image src="/neurema-mascot.png" alt="Neurema Mascot" className={styles.cardImage} style={{ maxHeight: '200px' }} width={512} height={512} />
+                            <Image src="/app6.png" alt="Revise more" className={styles.cardImage} width={1024} height={1024} />
+                        </div>
+                    </div>
+
+                    {/* 7. Exam confident */}
+                    <div className={`${styles.glassCard} ${styles.featureRow}`}>
+                        <div className={styles.cardContent}>
+                            <h3 className={styles.cardTitle}>Enter the exam calm and confident.</h3>
+                            <p className={styles.cardDesc}>
+                                Beat cramming and memory drops.
+                                No panic revision. No forgetting.
+                                Just clear concepts on demand.
+                                Exams, simply handled.
+                            </p>
+                        </div>
+                        <div className={styles.cardVisual}>
+                            <Image src="/app7.png" alt="Exam confident" className={styles.cardImage} width={1024} height={1024} />
                         </div>
                     </div>
                 </div>

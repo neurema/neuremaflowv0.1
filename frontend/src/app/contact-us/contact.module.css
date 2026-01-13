@@ -122,3 +122,27 @@
     padding: clamp(24px, 10vw, 48px);
   }
 }
+
+.contactInfo {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 1rem;
+  color: rgba(13, 18, 22, 0.8);
+}
+
+.contactInfo p {
+  margin: 0;
+}
+
+.contactLink {
+  color: var(--color-accent-strong);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.contactLink:hover {
+  opacity: 0.8;
+}

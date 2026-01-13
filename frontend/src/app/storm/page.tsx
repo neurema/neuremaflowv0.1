@@ -1,6 +1,8 @@
 'use client';
 
 import styles from './page.module.css';
+import StormHero3D from '@/components/StormHero3D';
+import Image from 'next/image';
 
 export default function StormPage() {
     return (
@@ -16,7 +18,7 @@ export default function StormPage() {
                     NEUREMA<br /><span className={styles.accentText}>STORM</span>
                 </h1>
                 <p className={styles.subhead}>
-                    The world’s first smart glasses designed for effortless learning. See what you know, retain what you see.
+                    Experience a new level of self-understanding with wearable biotechnology that fits seamlessly into your life
                 </p>
 
                 <div className={styles.specsGrid}>
@@ -25,75 +27,98 @@ export default function StormPage() {
                         <span className={styles.specValue}>42g</span>
                     </div>
                     <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Display</span>
-                        <span className={styles.specValue}>MicroLED</span>
+                        <span className={styles.specLabel}>Camera</span>
+                        <span className={styles.specValue}>12 MP</span>
                     </div>
                     <div className={styles.specItem}>
                         <span className={styles.specLabel}>Battery</span>
-                        <span className={styles.specValue}>18 hrs</span>
+                        <span className={styles.specValue}>7 hrs</span>
                     </div>
                 </div>
 
                 <div className={styles.productHeroVisual}>
-                    <span className={styles.productImagePlaceholder}>[Render of Neurema Storm Glasses]</span>
+                    <StormHero3D />
                 </div>
             </main>
 
             {/* Features Section */}
             <section className={styles.featuresSection}>
-                <h2 className={styles.sectionTitle}>Augmented <span className={styles.accentText}>Intelligence.</span></h2>
+                <h2 className={styles.sectionTitle}>Decode Your <span className={styles.accentText}>Mind&apos;s Eye.</span></h2>
 
                 <div className={styles.featuresList}>
                     {/* Feature 1 */}
                     <div className={styles.featureRow}>
                         <div className={styles.featureContent}>
-                            <h3 className={styles.featureTitle}>Instant Recall</h3>
+                            <h3 className={styles.featureTitle}>True Focus, Not Just Watch Time</h3>
                             <p className={styles.featureDesc}>
-                                Flashcards aren&apos;t just for your phone. See key terms and definitions overlaid on your real-world study materials, exactly when you need them.
+                                Sitting at your desk for 8 hours means nothing if you were only focused for 2. We separate the busy work from the deep work, giving you a metric that actually impacts your grades.
                             </p>
                         </div>
                         <div className={styles.featureVisual}>
-                            {/* Placeholder for feature image */}
-                            <span style={{ color: '#ccc' }}>[Heads-Up Display View]</span>
+                            <Image
+                                src="/wearable4.jpeg"
+                                alt="True Focus"
+                                width={500}
+                                height={300}
+                                className={styles.featureImage}
+                            />
                         </div>
                     </div>
 
                     {/* Feature 2 */}
                     <div className={styles.featureRow}>
                         <div className={styles.featureContent}>
-                            <h3 className={styles.featureTitle}>Live Transcriptions</h3>
+                            <h3 className={styles.featureTitle}>Smarter and Faster Recaps</h3>
                             <p className={styles.featureDesc}>
-                                Never miss a word in a lecture. Storm captures audio and projects real-time transcriptions and summaries in your peripheral vision.
+                                Efficiency is the ultimate cheat code. Stop scrubbing through hours of video. Jump straight to the low-attention zones where you need the most review, and skip the rest.
                             </p>
                         </div>
                         <div className={styles.featureVisual}>
-                            <span style={{ color: '#ccc' }}>[Live Transcription UI]</span>
+                            <Image
+                                src="/wearable3.jpeg"
+                                alt="Smarter Recaps"
+                                width={500}
+                                height={300}
+                                className={styles.featureImage}
+                            />
                         </div>
                     </div>
 
                     {/* Feature 3 */}
                     <div className={styles.featureRow}>
                         <div className={styles.featureContent}>
-                            <h3 className={styles.featureTitle}>Focus Filters</h3>
+                            <h3 className={styles.featureTitle}>No More Fake Studying</h3>
                             <p className={styles.featureDesc}>
-                                Block out distractions. Storm can subtly dim your peripheral vision to create a &quot;tunnel focus&quot; effect, helping you lock in on your book or screen.
+                                You can lie to yourself, but you can&apos;t lie to your biometrics. We hold you accountable to ensure every minute you spend studying is a minute spent learning.
                             </p>
                         </div>
                         <div className={styles.featureVisual}>
-                            <span style={{ color: '#ccc' }}>[Focus Mode Visual]</span>
+                            <Image
+                                src="/wearable2.jpeg"
+                                alt="Biometrics"
+                                width={500}
+                                height={300}
+                                className={styles.featureImage}
+                            />
                         </div>
                     </div>
 
                     {/* Feature 4 */}
                     <div className={styles.featureRow}>
                         <div className={styles.featureContent}>
-                            <h3 className={styles.featureTitle}>Seamless Sync</h3>
+                            <h3 className={styles.featureTitle}>Stronger Attention Over Time</h3>
                             <p className={styles.featureDesc}>
-                                Everything you capture with Storm instantly syncs to your Neurema App. Review your &quot;Storm Notes&quot; on your phone during your commute.
+                                Focus is a skill, not a talent. We give you the data-driven roadmap to build an unshakeable attention span that lasts long after you take the device off.
                             </p>
                         </div>
                         <div className={styles.featureVisual}>
-                            <span style={{ color: '#ccc' }}>[Sync Animation]</span>
+                            <Image
+                                src="/wearable5.jpeg"
+                                alt="Attention Span"
+                                width={500}
+                                height={300}
+                                className={styles.featureImage}
+                            />
                         </div>
                     </div>
                 </div>
