@@ -14,10 +14,10 @@ const teamMembers = [
     image: "/Shoaib.jpeg"
   },
   {
-    name: "Priyansh Jain",
+    name: "Dr. Priyansh Jain",
     role: "Managing Director (MD)",
     bio: "He provides strategic guidance to the leadership team and oversees general operations. He advises the board to help ensure the company's stability, business relations and effective day-to-day functioning.",
-    specialization: "Strategy & Operations",
+    specialization: "Operations and Partnerships",
     image: "/Priyansh.jpeg"
   },
   {
