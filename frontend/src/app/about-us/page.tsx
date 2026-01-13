@@ -36,22 +36,22 @@ const teamMembers = [
   },
   {
     name: "Jaivardhan Bhola",
-    role: "Chief Software Officer (CSO)",
-    bio: "He leads the software engineering team. He oversees the development and maintenance of the Neurema platform, ensuring a consistent and scalable experience across Android, iOS, and Web.",
+    role: "Head of App Development",
+    bio: "The architect behind the screen, dedicated to building a fast, secure, and crash-free experience for every user.",
     specialization: "Software Engineering",
     image: "/Jaivardhan.png"
   },
   {
     name: "Priya Bhatt",
-    role: "Chief Creative Officer (CCO)",
-    bio: "She leads the visual identity and user experience design. She is responsible for the application interface and marketing materials, with a focus on creating an engaging and immersive experience for students.",
+    role: "Creativity Officer",
+    bio: "Ensuring that every interaction you have with our brand feels personal, seamless, and beautifully designed.",
     specialization: "Visual Identity & UX",
     image: "/Priya.jpeg"
   },
   {
     name: "Meshwa Ashokkumar Dahivelkar",
-    role: "Chief Research Officer (CRO)",
-    bio: "Manages pilot programs and research initiatives to validate the platform's efficacy in real-world classrooms. She coordinates with institutions and integrates user feedback into the product roadmap.",
+    role: "Research and Pilot Studies Manager",
+    bio: "Bridging the gap between our ideas and your needs by validating features through real-world feedback and trials.",
     specialization: "Research & Validation",
     image: "/Meshwa.jpeg"
   }

@@ -115,6 +115,14 @@
     flex: 1.2;
     height: 100%;
     pointer-events: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productImage {
+    display: none;
 }
 
 /* Call to Action */
@@ -215,11 +223,23 @@
     }
 
     .productImage {
-        max-height: 250px;
+        display: block;
+        max-height: 300px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 20px;
+        /* User requested border radius change */
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .floatingCard {
         display: none;
         /* Simplify for mobile */
+    }
+
+    .canvasContainer {
+        display: none;
     }
 }

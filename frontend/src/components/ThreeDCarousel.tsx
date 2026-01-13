@@ -13,6 +13,7 @@ interface SlideData {
     description: string;
     ctaLabel: string;
     ctaLink: string;
+    image: string;
 }
 
 const slides: SlideData[] = [
@@ -24,7 +25,8 @@ const slides: SlideData[] = [
         bgTitle: 'Storm',
         description: 'Advanced pupillometry and EEG sensors seamlessly integrated into a lightweight frame. See how your brain works.',
         ctaLabel: 'Discover the Tech',
-        ctaLink: '/storm'
+        ctaLink: '/storm',
+        image: '/wearable1.jpeg'
     },
     {
         id: 'app',
@@ -34,7 +36,8 @@ const slides: SlideData[] = [
         bgTitle: 'Neurema',
         description: 'Don\'t just review information, absorb it. Neurema bridges the gap between studying today and remembering tomorrow.',
         ctaLabel: 'See How It Works',
-        ctaLink: '/app'
+        ctaLink: '/app',
+        image: '/screen.jpg'
     }
 ];
 
@@ -90,8 +93,16 @@ export default function ThreeDCarousel() {
                                 </a>
                             </div>
 
+
                             {/* Spacer for 3D model area */}
-                            <div className={styles.productDisplayPlaceholder} />
+                            <div className={styles.productDisplayPlaceholder}>
+                                {/* Mobile Image Fallback */}
+                                <img
+                                    src={slide.image}
+                                    alt={slide.mainTitle}
+                                    className={styles.productImage}
+                                />
+                            </div>
                         </div>
                     </div>
                 ))}

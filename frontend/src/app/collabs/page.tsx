@@ -3,19 +3,28 @@ import Carousel from '@/components/Carousel';
 import { SiteHeader } from '@/components/SiteHeader';
 import styles from './page.module.css';
 
-const COLLAB_SLIDES: { type: 'video' | 'image'; src?: string; image: string; rotation?: number; scale?: number; title?: string; description?: string; }[] = [
-    {
-        type: 'video',
-        src: '/EW.mp4',
-        image: '/EW.mp4', // Fallback
-        rotation: -90,
-        scale: 1.5,
-    },
-    ...Array.from({ length: 12 }, (_, i) => ({
-        image: `/EW${i + 1}.jpeg`,
+import fs from 'fs';
+import path from 'path';
+
+function getCollabSlides() {
+    const publicDir = path.join(process.cwd(), 'public');
+    const files = fs.readdirSync(publicDir);
+
+    const ewImages = files
+        .filter(file => /^EW\d+\.jpeg$/.test(file))
+        .sort((a, b) => {
+            const numA = parseInt(a.replace('EW', '').replace('.jpeg', ''));
+            const numB = parseInt(b.replace('EW', '').replace('.jpeg', ''));
+            return numA - numB;
+        });
+
+    return ewImages.map(file => ({
+        image: `/${file}`,
         type: 'image' as const,
-    })),
-];
+    }));
+}
+
+const COLLAB_SLIDES = getCollabSlides();
 
 export default function CollabsPage() {
     return (
