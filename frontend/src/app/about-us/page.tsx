@@ -22,7 +22,7 @@ const teamMembers = [
   },
   {
     name: "Ibrahim Ahsan Abdullah",
-    role: "Chief Operations Officer (COO)",
+    role: "Associate Director",
     bio: "He focuses on business development and forming strategic partnerships. He works directly with educational institutions to build relationships and establish collaborative agreements.",
     specialization: "Business & Partnerships",
     image: "/Ibrahim.jpeg"
