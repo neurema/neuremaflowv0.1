@@ -57,7 +57,7 @@ export default function ContactUsPage() {
 
         <div className={styles.contactInfo}>
           <p>Phone: <a href="tel:+917795977671" className={styles.contactLink}>+91 77959 77671</a></p>
-          <p>Email: <a href="mailto:shoaibsalimattar@neurema.com" className={styles.contactLink}>shoaibsalimattar@neurema.com</a></p>
+          <p>Email: <a href="mailto:support@neurema.com" className={styles.contactLink}>support@neurema.com</a></p>
         </div>
 
         <form className={styles.form} onSubmit={handleSubmit}>

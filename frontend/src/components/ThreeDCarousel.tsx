@@ -23,7 +23,7 @@ const slides: SlideData[] = [
         mainTitle: 'Insight in the',
         suffix: 'Blink of an Eye.',
         bgTitle: 'Storm',
-        description: 'Advanced pupillometry and EEG sensors seamlessly integrated into a lightweight frame. See how your brain works.',
+        description: 'Glasses that show how you focus and help you learn smarter with Pupillometry and Neuroscience.',
         ctaLabel: 'Discover the Tech',
         ctaLink: '/storm',
         image: '/wearable1.jpeg'
@@ -31,10 +31,10 @@ const slides: SlideData[] = [
     {
         id: 'app',
         type: 'app',
-        mainTitle: 'Because Knowledge',
+        mainTitle: 'Your Knowledge',
         suffix: 'Deserves to Stay.',
         bgTitle: 'Neurema',
-        description: 'Don\'t just review information, absorb it. Neurema bridges the gap between studying today and remembering tomorrow.',
+        description: 'Don\'t just review information, absorb it like never before! Neurema helps you connect studying today with remembering tomorrow.',
         ctaLabel: 'See How It Works',
         ctaLink: '/app',
         image: '/screen.jpg'

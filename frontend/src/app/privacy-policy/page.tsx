@@ -31,7 +31,7 @@ export default function TermsAndConditionsPage() {
             <strong>Phone:</strong> +91 77959 77671
           </li>
           <li>
-            <strong>Postal address:</strong> No.24, 3rd Floor, Karna Shree Layout, Virgonagar, Bangalore North, Bangalore- 560049, Karnataka
+            <strong>Postal address:</strong> Karna Shree Layout, Virgonagar, Bangalore North, Bangalore- 560049, Karnataka
           </li>
           <li>
             <strong>Grievance Officer (India):</strong> To be updated
@@ -167,7 +167,7 @@ export default function TermsAndConditionsPage() {
           <p className={styles.paragraph}>
             Parents/guardians can review, correct, or request deletion of a child’s
             personal data processed for the Services and withdraw consent at any time
-            by emailing neurema.in@gmail.com. We will respond within applicable legal
+            by emailing support@neurema.com. We will respond within applicable legal
             timeframes and may need to verify identity.
           </p>
           <h3 className={styles.subHeading}>5.3 Additional protections for children</h3>
@@ -262,7 +262,7 @@ export default function TermsAndConditionsPage() {
             <li>Object or restrict certain processing (where permitted by law)</li>
           </ul>
           <p className={styles.paragraph}>
-            To exercise these rights, email neurema.in@gmail.com. We will verify your
+            To exercise these rights, email support@neurema.com. We will verify your
             request and respond within the time required by law. For child accounts, we
             will verify the parent/guardian.
           </p>

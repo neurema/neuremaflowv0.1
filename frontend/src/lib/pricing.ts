@@ -1,4 +1,4 @@
-﻿export type PricingTier = "personal" | "business";
+﻿export type PricingTier = "personal";
 
 export interface PricingPlan {
   id: string;
@@ -48,24 +48,6 @@ export const pricingPlansByTier: PricingPlansByTier = {
         "Get full access to all activities",
         "Access the built-in bubble system",
         "Move across a personalised crunch schedule",
-      ],
-    },
-  ],
-  business: [
-    {
-      id: "effective-learning-business",
-      tier: "business",
-      name: "Effective Learning – Teams",
-      price: 499,
-      currency: "INR",
-      unit: "seat / exam",
-      billingNote: "For cohort and classroom pilots",
-      ctaLabel: "Talk to us",
-      features: [
-        "Centralised admin and cohort insights",
-        "Shared neuro-sync engine across groups",
-        "Onboarding support for educators and teams",
-        "Priority product feedback channel",
       ],
     },
   ],

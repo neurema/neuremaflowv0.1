@@ -1,19 +1,11 @@
 ﻿"use client";
 
-import { useState } from "react";
-// import Link from "next/link"; // unused
 import homeStyles from "../page.module.css";
 import styles from "./pricing.module.css";
-import { pricingPlansByTier, type PricingTier } from "@/lib/pricing";
-
-const tiers: { id: PricingTier; label: string }[] = [
-  { id: "personal", label: "Personal" },
-  { id: "business", label: "Business" },
-];
+import { pricingPlansByTier } from "@/lib/pricing";
 
 export default function PricingPage() {
-  const [activeTier, setActiveTier] = useState<PricingTier>("personal");
-  const plans = pricingPlansByTier[activeTier];
+  const plans = pricingPlansByTier["personal"];
 
   return (
     <div className={homeStyles.page}>
@@ -21,22 +13,6 @@ export default function PricingPage() {
 
       <main className={styles.main}>
         <h1 className={styles.heading}>Unlock <span className={styles.accentText}>Your Potential</span></h1>
-
-        <div className={styles.tierToggle}>
-          <div className={styles.tierPill}>
-            {tiers.map((tier) => (
-              <button
-                key={tier.id}
-                type="button"
-                className={`${styles.tierButton} ${activeTier === tier.id ? styles.tierButtonActive : ""
-                  }`}
-                onClick={() => setActiveTier(tier.id)}
-              >
-                {tier.label}
-              </button>
-            ))}
-          </div>
-        </div>
 
         <section className={styles.cards} aria-label="Pricing plans">
           {plans.map((plan) => (

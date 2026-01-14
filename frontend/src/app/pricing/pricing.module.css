@@ -21,40 +21,7 @@
   color: var(--color-accent-strong);
 }
 
-.tierToggle {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  padding: 4px;
-  border-radius: 999px;
-  background: #f3e5ff;
-  box-shadow: 0 10px 24px rgba(131, 71, 221, 0.28);
-}
 
-.tierPill {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-radius: inherit;
-}
-
-.tierButton {
-  border: none;
-  border-radius: 999px;
-  background: transparent;
-  padding: 10px 24px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: rgba(17, 19, 23, 0.7);
-  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.tierButtonActive {
-  background: #ffffff;
-  color: #7b3ff3;
-  box-shadow: 0 8px 18px rgba(131, 71, 221, 0.3);
-}
 
 .cards {
   width: 100%;
@@ -167,9 +134,5 @@
 
   .heading {
     font-size: 1.8rem;
-  }
-
-  .tierButton {
-    padding-inline: 18px;
   }
 }
