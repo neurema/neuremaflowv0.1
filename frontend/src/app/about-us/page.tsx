@@ -32,7 +32,8 @@ const teamMembers = [
     role: "Chief Technology Officer (CTO)",
     bio: "He leads the technical infrastructure and hardware engineering efforts. His focus is on wearable technology R&D and ensuring our hardware integrates smoothly with the software ecosystem.",
     specialization: "Hardware & R&D",
-    image: "/Ashutosh.jpeg"
+    image: "/Ashutosh.jpeg",
+    imageStyle: { objectPosition: 'center 20%' }
   },
   {
     name: "Jaivardhan Bhola",
@@ -148,7 +149,11 @@ export default function AboutUsPage() {
                 alt={currentMember.name}
                 fill
                 className={styles.personImage}
-                style={{ objectFit: 'cover', objectPosition: 'top' }}
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'top',
+                  ...(currentMember.imageStyle || {})
+                }}
               />
             </div>
           </div>
