@@ -40,7 +40,7 @@ const teamMembers = [
     role: "Head of App Development",
     bio: "The architect behind the screen, dedicated to building a fast, secure, and crash-free experience for every user.",
     specialization: "Software Engineering",
-    image: "/Jaivardhan.png"
+    image: "/Jaivardhan.jpg"
   },
   {
     name: "Priya Bhatt",
