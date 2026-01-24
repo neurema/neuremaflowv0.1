@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './ThreeDCarousel.module.css';
 import ThreeDScene from './ThreeDScene';
 
@@ -97,10 +98,13 @@ export default function ThreeDCarousel() {
                             {/* Spacer for 3D model area */}
                             <div className={styles.productDisplayPlaceholder}>
                                 {/* Mobile Image Fallback */}
-                                <img
+                                <Image
                                     src={slide.image}
                                     alt={slide.mainTitle}
+                                    width={800}
+                                    height={600}
                                     className={styles.productImage}
+                                    style={{ width: 'auto', height: 'auto' }}
                                 />
                             </div>
                         </div>

@@ -60,9 +60,10 @@ export default function JoinWaitlist() {
             setEmail('');
 
             // Auto close after success? Maybe let user close it to read the message.
-        } catch (error: any) {
+        } catch (error: unknown) {
             setStatus('error');
-            setMessage(error.message || 'Failed to join waitlist. Please try again.');
+            const errorMessage = error instanceof Error ? error.message : 'Failed to join waitlist. Please try again.';
+            setMessage(errorMessage);
         }
     };
 

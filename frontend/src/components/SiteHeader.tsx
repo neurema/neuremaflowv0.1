@@ -17,9 +17,7 @@ export function SiteHeader() {
     { href: "/privacy-policy", label: "Privacy Policy" },
   ];
 
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  /* eslint-enable @typescript-eslint/no-unused-vars */
 
   return (
     <header className={styles.header}>

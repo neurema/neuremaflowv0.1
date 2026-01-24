@@ -51,10 +51,11 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ message: 'Success' }, { status: 200 });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Waitlist API Error:', error);
+        const errorMessage = error instanceof Error ? error.message : 'Internal Server Error';
         return NextResponse.json(
-            { message: error.message || 'Internal Server Error' },
+            { message: errorMessage },
             { status: 500 }
         );
     }
