@@ -5,6 +5,7 @@ import { FormEvent, useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { loginStrapi, registerStrapi } from "@/lib/strapi";
 import ThreeDCarousel from "@/components/ThreeDCarousel";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export default function Home() {
   // navLinks removed (unused)
@@ -73,6 +74,7 @@ export default function Home() {
 
   return (
     <div className={styles.page} id="top">
+      <SiteHeader />
       <ThreeDCarousel />
 
 

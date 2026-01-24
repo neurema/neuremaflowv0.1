@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from '@/app/page.module.css';
 import MobileMenu from './MobileMenu';
+import JoinWaitlist from './JoinWaitlist';
 
 export function SiteHeader() {
   const navLinks: { href: string; label: string }[] = [
@@ -34,6 +35,8 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
+
+      <JoinWaitlist />
 
       {/* Mobile Hamburger */}
       <button
