@@ -79,9 +79,7 @@ export default function Home() {
 
 
 
-      <footer className={styles.footer}>
-        {/* Links moved to header */}
-      </footer>
+
 
       {
         isModalOpen && (
